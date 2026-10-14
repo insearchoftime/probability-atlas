@@ -1,0 +1,46 @@
+name: Publish probability atlas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - updates/atlas.patch
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare verified atlas
+        run: |
+          mkdir -p _site
+          git show 189a315dd1d2d85ea6175807e3fbe4ecd1b1b22c:index.html > _site/index.html
+          patch --batch --forward _site/index.html < updates/atlas.patch
+          echo "6ad705958cc3edf186a7de152c6b33bb37e0c538a87e7650cd04e0f324c3d5ea  _site/index.html" | sha256sum --check --strict
+          cp .nojekyll NOTICE.txt _site/
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
