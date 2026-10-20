@@ -35,7 +35,7 @@ jobs:
           mkdir -p _site
           git show 189a315dd1d2d85ea6175807e3fbe4ecd1b1b22c:index.html > _site/index.html
           patch --batch --forward _site/index.html < updates/atlas.patch
-          echo "6ad705958cc3edf186a7de152c6b33bb37e0c538a87e7650cd04e0f324c3d5ea  _site/index.html" | sha256sum --check --strict
+          echo "f660d621445b5890b3fa38bd34920931c82254dba581edfabe0268e9b9f61b92  _site/index.html" | sha256sum --check --strict
           cp .nojekyll NOTICE.txt _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
