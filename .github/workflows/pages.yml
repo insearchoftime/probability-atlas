@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - updates/atlas.patch
+      - updates/archive-*.b64
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -34,8 +34,9 @@ jobs:
         run: |
           mkdir -p _site
           git show 189a315dd1d2d85ea6175807e3fbe4ecd1b1b22c:index.html > _site/index.html
-          patch --batch --forward _site/index.html < updates/atlas.patch
-          echo "f660d621445b5890b3fa38bd34920931c82254dba581edfabe0268e9b9f61b92  _site/index.html" | sha256sum --check --strict
+          cat updates/archive-*.b64 | base64 --decode | gzip --decompress > /tmp/atlas.patch
+          patch --batch --forward _site/index.html < /tmp/atlas.patch
+          echo "7b7abdd76764bcd4b5694773d9c85e4fd89b04822da256176d62445493509dcc  _site/index.html" | sha256sum --check --strict
           cp .nojekyll NOTICE.txt _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
