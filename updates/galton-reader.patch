@@ -1,0 +1,242 @@
+--- a/index.html
++++ b/index.html
+@@ -479,0 +480,42 @@
++  <style>
++.galton-story{max-width:760px;margin:0 auto}
++.galton-story .galton-lead{font:400 24px/1.55 Georgia,serif;letter-spacing:-.02em;margin:6px 0 36px;max-width:660px}
++.galton-chapter{margin:0 0 38px}
++.galton-chapter h2{font:400 27px/1.25 Georgia,serif;letter-spacing:-.025em;margin:0 0 20px;max-width:650px}
++.galton-chapter>p,.galton-closing{font-size:16px;line-height:1.85;margin:0 0 18px;max-width:680px}
++.galton-overline{display:block;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 13px}
++.galton-source{display:inline-block;font-size:11px;line-height:1.7;color:var(--muted);text-decoration:underline;text-underline-offset:4px;margin-top:2px}
++.galton-source:hover{color:var(--accent)}
++.galton-mechanism{margin:25px 0 18px;padding:20px 10px 14px;background:var(--reader-surface)}
++.galton-mechanism svg{display:block;width:100%;height:auto;font:15px system-ui;fill:var(--text)}
++.inheritance-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
++.inheritance-panel{position:relative;text-align:center}
++.inheritance-panel:not(:last-child):after{content:'→';position:absolute;right:-23px;top:50%;font-size:22px;color:var(--muted)}
++.inheritance-label{display:block;font-size:12px;line-height:1.6}
++.inheritance-note{display:block;font-size:10px;line-height:1.6;color:var(--muted)}
++.inheritance-axis{stroke:var(--line);stroke-width:1.4}
++.inheritance-center{stroke:var(--line);stroke-dasharray:3 5}
++.inheritance-curve{fill:none;stroke:var(--text);stroke-width:2.4}
++.inheritance-curve.is-contracted{stroke:var(--reader-chart-secondary)}
++.inheritance-small{font-size:12px;fill:var(--muted)}
++.inheritance-arrow{font-size:25px;fill:var(--muted)}
++.galton-mechanism figcaption,.galton-document figcaption{font-size:10px;line-height:1.7;color:var(--muted);margin-top:13px}
++.galton-context-note{font-size:12px;line-height:1.8;color:var(--muted);padding-left:16px;border-left:2px solid var(--line);margin-top:22px;max-width:650px}
++.galton-document{margin:25px 0 20px}
++.galton-document img{display:block;width:100%;height:290px;object-fit:contain;background:var(--image-paper);padding:15px}
++.galton-document a{text-decoration:underline;text-underline-offset:3px}
++.galton-exact{padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:24px 0 0}
++.galton-exact>summary{font-size:13px;cursor:pointer}
++.galton-exact .reading-block{padding-bottom:0}
++.galton-experiment{border-top:1px solid var(--line);padding-top:30px}
++.galton-story .lab{margin-top:22px}
++.galton-story .lab-heading,.galton-story .lab-quiz{display:none}
++.galton-heuristic{background:var(--reader-surface);border-left:3px solid var(--accent);padding:24px 25px 10px}
++.galton-heuristic .galton-rule{font:400 22px/1.55 Georgia,serif}
++.galton-inline-label{font-weight:600}
++.galton-heuristic .galton-limit{font-size:13px;color:var(--muted)}
++.galton-closing{margin-bottom:28px}
++.galton-story>.quiz{margin-top:25px}
++@media(max-width:520px){.galton-story .galton-lead{font-size:21px;margin-bottom:30px}.galton-chapter{margin-bottom:32px}.galton-chapter h2{font-size:24px}.galton-chapter>p,.galton-closing{font-size:15px;line-height:1.8}.galton-mechanism{padding:18px 15px}.inheritance-panels{grid-template-columns:1fr;gap:40px}.inheritance-panel{width:200px;max-width:100%;margin:auto}.inheritance-panel:not(:last-child):after{content:'↓';top:auto;bottom:-32px;right:calc(50% - 7px)}.inheritance-label{font-size:13px}.inheritance-note{font-size:11px}.galton-document img{height:230px;padding:8px}.galton-heuristic{padding:20px 16px 7px}.galton-heuristic .galton-rule{font-size:20px}}
++
++</style>
+@@ -521 +562,0 @@
+-      <button id="notebookButton" class="nav-text" aria-label="Открыть мои знания">Конспект <span id="knowledgeCount" class="count-badge" hidden>0</span><span>↗</span></button>
+@@ -2553 +2593,0 @@
+-  try{const saved=JSON.parse(localStorage.getItem('atlas-visuals-v1')||'[]');for(const [id,value]of saved){if(configs[id]&&value&&typeof value==='object')retained.set(id,value);}}catch(_){}
+@@ -2586 +2626 @@
+-      if(current!==live)return;const p=setup();const k=config.kind;container.querySelector('output')?.replaceChildren(document.createTextNode(fmt(state.value,0)));retained.set(id,{...state});try{localStorage.setItem('atlas-visuals-v1',JSON.stringify([...retained]));}catch(_){}
++      if(current!==live)return;const p=setup();const k=config.kind;container.querySelector('output')?.replaceChildren(document.createTextNode(fmt(state.value,0)));retained.set(id,{...state});
+@@ -2645 +2684,0 @@
+-  const scores=['0,0','1,0','2,0','1,1','2,1','2,2','3,0'];
+@@ -2648 +2686,0 @@
+-  try{const saved=JSON.parse(localStorage.getItem('atlas-points-v1')||'null');if(saved&&Number.isInteger(saved.a)&&Number.isInteger(saved.b)&&scores.includes(saved.a+','+saved.b)&&Number.isFinite(saved.stake)&&saved.stake>=0)params=saved;}catch(_){}
+@@ -2681 +2719 @@
+-    function changed(){draw();if(input.getAttribute('aria-invalid')==='true')return;try{localStorage.setItem('atlas-points-v1',JSON.stringify(params));}catch(_){}container.dispatchEvent(new CustomEvent('points:change',{bubbles:true,detail:{...params}}));}
++    function changed(){draw();if(input.getAttribute('aria-invalid')==='true')return;container.dispatchEvent(new CustomEvent('points:change',{bubbles:true,detail:{...params}}));}
+@@ -3271,0 +3310,100 @@
++/* A connected reading of Galton's problem and the board.
++ * Historical claims are tied to the primary passages below.
++ * Four rows and the measurement example are modern teaching reconstructions.
++ */
++window.ATLAS_GALTON_STORY = {
++  title: 'Как непохожие пути складываются в устойчивую форму',
++  author: 'Фрэнсис Гальтон',
++  life: '1822–1911',
++  dates: '1877 · лекция о наследственности; 1889 · простая доска в Natural Inheritance',
++  lead: 'Один шарик невозможно уверенно провести в заданную ячейку. Но множество шариков образует предсказуемое распределение. Доска позволяет увидеть эту смену масштаба. Для Гальтона за ней стоял другой вопрос: как сохраняется распределение признаков между поколениями, если отдельные потомки отличаются от родителей?',
++  problemTitle: 'Почему разброс не растёт от поколения к поколению?',
++  problem: [
++    'В лекции 1877 года Гальтон рассматривает наследственную изменчивость. Он сравнивает взвешенные семена душистого горошка и потомство разных групп. Самого сходства поколений недостаточно для объяснения устойчивости: если каждое поколение добавляет новый разброс, почему распределение не становится всё шире? Гальтон ищет условия равновесия в упрощённом «типичном» случае. Это исследовательская задача автора, а не установленный закон обо всех живых популяциях.'
++  ],
++  turnTitle: 'Сравнить нужно распределения, а не судьбы отдельных семян',
++  turn: [
++    'В его объяснении соединяются два движения. Центры групп потомства смещаются к общему центру; внутри каждой группы возникает разброс. Аппарат 1877 года делает их последовательными: желоба стягивают поток дробинок, штыри снова рассеивают его. При согласованных настройках восстанавливается исходная форма. Поворот мысли — искать механизм устойчивости целого при изменчивости частей. Механическая демонстрация не доказывает биологическую теорию. Часть аппарата автор уже показывал в 1874 году.'
++  ],
++  boardTitle: 'На простой доске центр выигрывает числом путей',
++  board: [
++    'В Natural Inheritance 1889 года появляется отдельная простая доска: воронка, ряды штырей, ячейки. Здесь оставим только рассеивание и построим современную идеализацию: на каждом ряду шарик независимо выбирает право или лево с вероятностью 1/2. Возьмём четыре ряда. Есть 16 равновероятных последовательностей, но всего пять конечных ячеек. В крайнюю левую ведёт один путь — четыре раза влево. В центральную ведут шесть: в каждом по два правых и левых шага, расположенных в разном порядке.',
++    'Поэтому вероятности пяти ячеек равны 1/16, 4/16, 6/16, 4/16, 1/16. Получается биномиальное распределение: центр чаще встречается, потому что к нему ведёт больше способов. Теперь важно различить два опыта. Больше шариков точнее проявляют это же распределение. Больше рядов меняют распределение числа правых шагов; после центрирования и нормирования оно приближается к нормальному. При конечном числе рядов исходы остаются дискретными. Нормальная кривая — приближение этой модели, известное до Гальтона, а не результат самого увеличения числа шариков.'
++  ],
++  experimentPrompt: 'Сначала оставь четыре ряда и увеличивай число шариков: меняется точность видимой картины. Затем увеличь число рядов: меняются возможные исходы и форма распределения. Это две разные причины изменений.',
++  heuristic: {
++    title: 'Прежде чем объяснять отдельный результат, восстанови механизм разброса',
++    rule: 'Когда показатель колеблется, спроси: какие воздействия складываются, независимы ли они и нет ли общей причины, сдвигающей всё сразу? Затем оцени типичный разброс и сравни с ним интересующий результат. Одна крайняя точка ещё не раскрывает механизм. И похожая на колокол гистограмма сама по себе не доказывает независимость причин.',
++    example: 'Ты проверяешь массу изделия. Пусть случайная ошибка каждого взвешивания независима, в среднем равна нулю и имеет стандартное отклонение 2 г. У среднего из 100 взвешиваний стандартная ошибка будет 0,2 г. Повторения помогают оценить массу точнее. Но если весы из-за калибровки каждый раз добавляют 1 г, среднее сохраняет этот сдвиг. Тогда следующая полезная проверка — контрольная гиря: ещё сто измерений теми же весами не устранят общую ошибку.',
++    limit: 'В идеальной доске независимость и одинаковые шансы заданы правилами модели. В работе их приходится проверять. Зависимые ошибки, меняющиеся условия и редкие очень крупные воздействия могут сделать привычное нормальное приближение ненадёжным. Доска даёт способ рассуждать и задавать вопросы; пригодность конкретной модели решают данные.'
++  },
++  closing: 'С доски можно унести привычку: смотреть одновременно на отдельный исход, распределение исходов и условия, которые это распределение создают.',
++  ethicalContext: 'Гальтон переносил рассуждения о наследственности на ранжирование человеческих качеств и рас, предлагал влиять на будущие поколения через браки. Этот социальный проект изложен в Hereditary Genius. Свойства вероятностной модели не подтверждают такие оценки и предложения.',
++  sources: [
++    {
++      id: 'lecture',
++      title: 'Typical Laws of Heredity',
++      author: 'Francis Galton',
++      year: '1877',
++      locator: 'с. 282–285: задача; с. 286–293: рассеивание, опыты с семенами и многостадийный аппарат',
++      url: 'https://galton.org/essays/1870-1879/galton-1877-roy-soc-typical-laws-heredity.pdf',
++      guide: 'Сравни простое рассеивание на с. 286 с желобами и повторным рассеиванием на с. 291–293. Это разные части аргумента.'
++    },
++    {
++      id: 'book',
++      title: 'Natural Inheritance',
++      author: 'Francis Galton',
++      year: '1889',
++      locator: 'глава V, с. 62–65; рис. 7–9 на с. 63',
++      url: 'https://galton.org/books/natural-inheritance/',
++      passageUrl: 'https://galton.org/cgi-bin/searchImages/search/books/natural-inheritance/pages/natural-inheritance_0070.htm',
++      guide: 'На с. 62 автор предлагает смотреть шире среднего; на с. 63–65 объясняет простую доску и отдельно обсуждает увеличение количества дробинок.'
++    },
++    {
++      id: 'social-context',
++      title: 'Hereditary Genius',
++      author: 'Francis Galton',
++      year: '1869; предисловие ко второму изданию 1892',
++      locator: 'Prefatory Chapter to the Edition of 1892: цели классификации способностей, расовые и социальные предположения',
++      url: 'https://galton.org/books/hereditary-genius/text/v5/genius5.htm',
++      guide: 'Этот текст раскрывает социальные цели автора; их нельзя вывести из механики доски.'
++    }
++  ]
++};
++
++</script>
++  <script>
++/* One reading path: historical problem → model → experiment → useful rule. */
++(() => {
++  'use strict';
++  const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++  const paragraphs=list=>(Array.isArray(list)?list:[list]).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');
++  const sourceLink=s=>s?`<a class="galton-source" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} · ${esc(s.locator)} ↗</a>`:'';
++  function inheritanceDiagram(){
++    const curves=[{sd:36,label:'Разброс родителей',note:'Исходная форма'},{sd:22,label:'Стягивание к центру',note:'Разброс уменьшается'},{sd:36,label:'Новое рассеивание',note:'Разброс увеличивается'}];
++    const panels=curves.map(({sd,label,note},j)=>{
++      const d=Array.from({length:81},(_,k)=>{const a=(k-40)*2;return `${k?'L':'M'}${(100+a).toFixed(1)} ${(105-77*Math.exp(-a*a/(2*sd*sd))).toFixed(1)}`;}).join(' ');
++      return `<div class="inheritance-panel"><span class="inheritance-label">${esc(label)}</span><svg viewBox="0 0 200 125" role="img" aria-label="${esc(label)}: ${esc(note)}"><line x1="18" x2="182" y1="106" y2="106" class="inheritance-axis"/><path d="${d}" class="inheritance-curve ${j===1?'is-contracted':''}"/><line x1="100" x2="100" y1="20" y2="106" class="inheritance-center"/></svg><span class="inheritance-note">${esc(note)}</span></div>`;
++    }).join('');
++    return `<figure class="galton-mechanism"><div class="inheritance-panels">${panels}</div><figcaption>Современная схема аргумента: стягивание уменьшает разброс, новое рассеивание его увеличивает. Ширины показаны условно.</figcaption></figure>`;
++  }
++  function render({idea,formulaHTML,storyContinuationHTML,quizHTML}){
++    const d=window.ATLAS_GALTON_STORY;if(!d)return '';
++    const media=window.ATLAS_VERTICAL_MEDIA?.galton;
++    return `<article class="galton-story" aria-label="Связный рассказ о доске Гальтона">
++      <p class="galton-lead">${esc(d.lead)}</p>
++      <section class="galton-chapter"><span class="galton-overline">1877 · Вопрос о наследовании</span><h2>Почему разброс не растёт бесконечно?</h2>${paragraphs(d.problem)}${sourceLink(d.sources?.[0])}</section>
++      <section class="galton-chapter"><h2>Рассеивание — только половина объяснения</h2>${paragraphs(d.turn)}${inheritanceDiagram()}${d.ethicalContext?`<aside class="galton-context-note">${esc(d.ethicalContext)}${sourceLink(d.sources?.[2])}</aside>`:''}</section>
++      <section class="galton-chapter"><span class="galton-overline">1889 · Простая доска</span><h2>Форма распределения объясняется числом путей</h2>${paragraphs(d.board)}${media?`<figure class="galton-document"><img src="${esc(media.src||media.local_path)}" width="${media.width}" height="${media.height}" loading="lazy" alt="Три квинкункса Гальтона на странице 63 Natural Inheritance, 1889"><figcaption>Гальтон, <i>Natural Inheritance</i>, 1889, с. 63, рис. 7–9. <a href="${esc(media.source_url)}" target="_blank" rel="noopener noreferrer">Открыть оригинал ↗</a></figcaption></figure>`:''}${sourceLink(d.sources?.[1])}<details class="galton-exact"><summary>Точный закон и условия модели</summary>${formulaHTML(idea)}</details></section>
++      <section class="galton-chapter galton-experiment"><h2>Поменяй одну вещь — и объясни результат</h2><p>${esc(d.experimentPrompt)}</p><div id="galtonStoryLab"></div></section>
++      <section class="galton-chapter galton-heuristic"><span class="galton-overline">Эвристика для своей работы</span><h2>${esc(d.heuristic?.title)}</h2><p class="galton-rule">${esc(d.heuristic?.rule)}</p><p><span class="galton-inline-label">Современный пример.</span> ${esc(d.heuristic?.example)}</p><p class="galton-limit">${esc(d.heuristic?.limit)}</p></section>
++      <p class="galton-closing">${esc(d.closing)}</p>
++      ${quizHTML(idea)}
++      ${storyContinuationHTML(idea)}
++    </article>`;
++  }
++  window.GaltonStory={render};
++})();
++
++</script>
++  <script>
+@@ -3283,3 +3421 @@
+-  let stored = {};
+-  try { stored = JSON.parse(localStorage.getItem('atlas-learning-v1') || '{}'); } catch (_) {}
+-  const state = {mode:'history',group:'all',query:'',selected:null,tab:'overview',panel:'welcome',back:[],zoom:1,panX:0,panY:0,progress:stored.progress || {},notes:stored.notes || {},answers:{},galtonParams:stored.galtonParams};
++  const state = {mode:'history',group:'all',query:'',selected:null,tab:'overview',panel:'welcome',back:[],zoom:1,panX:0,panY:0,answers:{},galtonParams:null};
+@@ -3296,3 +3431,0 @@
+-  function save() { let persisted=true;try { localStorage.setItem('atlas-learning-v1',JSON.stringify({progress:state.progress,notes:state.notes,galtonParams:state.galtonParams})); } catch (_) { persisted=false;toast('Браузер не сохранил конспект. Скачай его через «Мои знания».'); } updateBadge();syncSaveButtons();return persisted; }
+-  function inNotebook(idea) { const p=state.progress[idea.id]; return typeof p?.saved==='boolean'?p.saved:Boolean(p?.correct||state.notes[idea.id]); }
+-  function updateBadge() { const n=ideas.filter(inNotebook).length; const badge=$('#knowledgeCount'); badge.textContent=n;badge.hidden=!n; }
+@@ -3353 +3486 @@
+-      return `<button class="${classes}" style="left:${p.x/11}%;top:${p.y/8.2}%" data-open="${esc(idea.id)}" aria-label="${esc(idea.title)}${idea.yearLabel?', '+esc(idea.yearLabel):''}" title="${esc(idea.hook||idea.summary)}"><span class="node-year">${esc(idea.yearLabel||idea.year||'Основа')}</span><span class="node-thumb" aria-hidden="true">${glyph(idea)}</span><span class="node-title">${esc(idea.shortTitle||idea.title)}</span><span class="node-author">${esc(idea.kind==='foundation'?'Понятие':idea.kind==='application'?'Применение':shortAuthor(idea))}</span>${state.progress[idea.id]?.correct?'<span class="node-progress" title="Понимание проверено"></span>':''}</button>`;
++      return `<button class="${classes}" style="left:${p.x/11}%;top:${p.y/8.2}%" data-open="${esc(idea.id)}" aria-label="${esc(idea.title)}${idea.yearLabel?', '+esc(idea.yearLabel):''}" title="${esc(idea.hook||idea.summary)}"><span class="node-year">${esc(idea.yearLabel||idea.year||'Основа')}</span><span class="node-thumb" aria-hidden="true">${glyph(idea)}</span><span class="node-title">${esc(idea.shortTitle||idea.title)}</span><span class="node-author">${esc(idea.kind==='foundation'?'Понятие':idea.kind==='application'?'Применение':shortAuthor(idea))}</span></button>`;
+@@ -3383 +3516 @@
+-    cleanupLab();state.panel='idea';state.selected=id;state.tab=tab==='auto'?'overview':tab;if(tab==='practice')delete state.answers[id];
++    cleanupLab();state.panel='idea';state.selected=id;state.tab=tab==='auto'?'overview':tab;state.answers={};
+@@ -3392 +3525 @@
+-  function home(){if(window.VerticalAtlas){cleanupLab();state.panel='welcome';state.selected=null;state.back=[];try{history.replaceState(null,'',location.pathname+location.search);}catch(_){}window.VerticalAtlas.closeReader();renderWelcome();drawMap();return;}cleanupLab();state.panel='welcome';state.selected=null;state.back=[];state.group='all';state.query='';$('#searchInput').value='';try{history.replaceState(null,'',location.pathname+location.search);}catch(_){location.hash='';}$('.map-area').classList.remove('panel-open');syncFilters();renderWelcome();drawMap();$('#inspector').scrollTop=0;}
++  function home(){state.answers={};if(window.VerticalAtlas){cleanupLab();state.panel='welcome';state.selected=null;state.back=[];try{history.replaceState(null,'',location.pathname+location.search);}catch(_){}window.VerticalAtlas.closeReader();renderWelcome();drawMap();return;}cleanupLab();state.panel='welcome';state.selected=null;state.back=[];state.group='all';state.query='';$('#searchInput').value='';try{history.replaceState(null,'',location.pathname+location.search);}catch(_){location.hash='';}$('.map-area').classList.remove('panel-open');syncFilters();renderWelcome();drawMap();$('#inspector').scrollTop=0;}
+@@ -3394 +3527 @@
+-  function routeHTML(current){return route.map((id,j)=>{const idea=byId.get(id);return idea?`<button class="route-row ${state.progress[id]?.correct?'done':''} ${id===current?'current':''}" data-open="${esc(id)}"><span class="route-number">${state.progress[id]?.correct?'✓':j+1}</span><span>${esc(idea.shortTitle||idea.title)}</span><span class="arrow">↗</span></button>`:'';}).join('');}
++  function routeHTML(current){return route.map((id,j)=>{const idea=byId.get(id);return idea?`<button class="route-row ${id===current?'current':''}" data-open="${esc(id)}"><span class="route-number">${j+1}</span><span>${esc(idea.shortTitle||idea.title)}</span><span class="arrow">↗</span></button>`:'';}).join('');}
+@@ -3396,2 +3529 @@
+-    const known=route.filter(id=>state.progress[id]?.correct).length;
+-    $('#panelContent').innerHTML=`<div class="welcome"><span class="eyebrow">Для тех, кому интересно понять</span><h1>Как из случайности<br>рождается <em>порядок?</em></h1><p>У каждой большой идеи была маленькая задача. Пройди путь от броска монеты к законам, которые помогают понимать мир.</p><button class="primary-button" data-open="${route.find(id=>!state.progress[id]?.correct)||route[0]}">Начать путешествие <span aria-hidden="true">→</span></button><section class="route-section"><div class="section-label"><h3>От монеты к колоколу</h3><span>${known} / ${route.length} проверено</span></div><p class="route-description">Шесть идей. Предскажи, попробуй, восстанови ход рассуждения.</p>${routeHTML()}</section><section class="curiosity-card">${miniBoard()}<h3>Почему шарики собираются в центре?</h3><p>Измени число рядов и количество шариков. Посмотри, меняют ли они одно и то же.</p><button class="text-button" data-open="galton" data-tab="practice">Попробовать доску Гальтона →</button></section><p class="local-note">Работает локально. Заметки остаются в твоём браузере.</p></div>`;
++    $('#panelContent').innerHTML=`<div class="welcome"><span class="eyebrow">Для тех, кому интересно понять</span><h1>Как из случайности<br>рождается <em>порядок?</em></h1><p>У каждой большой идеи была маленькая задача. Пройди путь от броска монеты к законам, которые помогают понимать мир.</p><button class="primary-button" data-open="${route[0]}">Начать путешествие <span aria-hidden="true">→</span></button><section class="route-section"><div class="section-label"><h3>От монеты к колоколу</h3></div><p class="route-description">Шесть идей. Предскажи, попробуй, восстанови ход рассуждения.</p>${routeHTML()}</section><section class="curiosity-card">${miniBoard()}<h3>Почему шарики собираются в центре?</h3><p>Измени число рядов и количество шариков. Посмотри, меняют ли они одно и то же.</p><button class="text-button" data-open="galton" data-tab="practice">Попробовать доску Гальтона →</button></section></div>`;
+@@ -3401 +3533 @@
+-  function quizHTML(idea){if(!idea.quiz)return '';const q=idea.quiz,progress=state.answers[idea.id];return `<section class="quiz" data-quiz="${esc(idea.id)}"><div class="quiz-label">Проверь себя без подсказки</div><h3>${esc(q.question)}</h3>${q.options.map((text,j)=>`<button class="quiz-option ${progress?.answer===j?'chosen':''} ${progress?.correct&&j===q.correct?'correct':''}" data-answer="${j}" aria-pressed="${progress?.answer===j}">${esc(text)}</button>`).join('')}<div class="quiz-feedback" role="status" aria-live="polite">${progress?`${progress.correct?'<strong>Да, именно так.</strong>':'Попробуй ещё раз: какой шаг рассуждения здесь важен?'}${progress.correct?' '+esc(q.explanation):''}`:''}</div></section>`;}
++  function quizHTML(idea){if(!idea.quiz)return '';const q=idea.quiz,response=state.answers[idea.id];return `<section class="quiz" data-quiz="${esc(idea.id)}"><div class="quiz-label">Проверь себя без подсказки</div><h3>${esc(q.question)}</h3>${q.options.map((text,j)=>`<button class="quiz-option ${response?.answer===j?'chosen':''} ${response?.correct&&j===q.correct?'correct':''}" data-answer="${j}" aria-pressed="${response?.answer===j}">${esc(text)}</button>`).join('')}<div class="quiz-feedback" role="status" aria-live="polite">${response?`${response.correct?'<strong>Да, именно так.</strong>':'Попробуй ещё раз: какой шаг рассуждения здесь важен?'}${response.correct?' '+esc(q.explanation):''}`:''}</div></section>`;}
+@@ -3403,3 +3535 @@
+-  function saveIdeaButton(idea){const saved=inNotebook(idea);return `<button class="heuristic-save ${saved?'saved':''}" data-save-idea="${esc(idea.id)}" aria-pressed="${saved}">${saved?'В конспекте · убрать':'Забрать в конспект +'}<span class="sr-only">: ${esc(idea.shortTitle||idea.title)}</span></button>`;}
+-  function syncSaveButtons(){document.querySelectorAll("[data-save-idea]").forEach(button=>{const idea=byId.get(button.dataset.saveIdea),saved=inNotebook(idea);button.classList.toggle("saved",saved);button.setAttribute("aria-pressed",saved);button.innerHTML=`${saved?"В конспекте · убрать":"Забрать в конспект +"}<span class="sr-only">: ${esc(idea.shortTitle||idea.title)}</span>`;});}
+-  function reflectionHTML(idea){const h=genesis[idea.id]?.heuristic;if(!h)return `<section class="takeaway"><h3>Главная мысль</h3><p>${esc(idea.takeaway||idea.summary)}</p>${saveIdeaButton(idea)}</section>`;return `<section class="heuristic-block" aria-label="Ментальная эвристика"><span class="heuristic-label">Ментальная эвристика · наша современная памятка</span><h3>${esc(h.name)}</h3><p class="heuristic-rule">${esc(h.rule)}</p><div class="heuristic-question"><span>Вопрос к данным</span><p>${esc(h.question)}</p></div><p class="heuristic-trap"><strong>Граница применения.</strong> ${esc(h.trap)}</p>${saveIdeaButton(idea)}</section>`;}
++  function heuristicHTML(idea){const h=genesis[idea.id]?.heuristic;if(!h)return `<section class="takeaway"><h3>Главная мысль</h3><p>${esc(idea.takeaway||idea.summary)}</p></section>`;return `<section class="heuristic-block" aria-label="Ментальная эвристика"><span class="heuristic-label">Ментальная эвристика · наша современная памятка</span><h3>${esc(h.name)}</h3><p class="heuristic-rule">${esc(h.rule)}</p><div class="heuristic-question"><span>Вопрос к данным</span><p>${esc(h.question)}</p></div><p class="heuristic-trap"><strong>Граница применения.</strong> ${esc(h.trap)}</p></section>`;}
+@@ -3424 +3554 @@
+-  function overviewHTML(idea){const d=digestFor(idea);return `<section class="digest-intro"><h2>${esc(d.question)}</h2><p>${esc(d.idea)}</p></section><figure class="digest-visual">${window.AtlasArt?.svg(idea.id)||''}</figure><section class="digest-example"><span class="digest-label">Один пример · современный разбор</span><p>${esc(d.example)}</p></section><section class="digest-carry"><span class="digest-label">Забрать с собой</span><p>${esc(d.carry)}</p>${saveIdeaButton(idea)}</section><div class="digest-actions"><button class="primary-button" data-tab-switch="${['galton','pascal-fermat'].includes(idea.id)?'practice':'learn'}">${['galton','pascal-fermat'].includes(idea.id)?'Попробовать опыт':'Разобрать по шагам'} ↗</button>${histories[idea.id]?'<button class="text-button" data-tab-switch="history">Задача и поворот мысли →</button>':''}</div>${storyContinuationHTML(idea)}`;}
++  function overviewHTML(idea){if(idea.id==='galton'&&window.GaltonStory)return window.GaltonStory.render({idea,formulaHTML,storyContinuationHTML,quizHTML});const d=digestFor(idea);return `<section class="digest-intro"><h2>${esc(d.question)}</h2><p>${esc(d.idea)}</p></section><figure class="digest-visual">${window.AtlasArt?.svg(idea.id)||''}</figure><section class="digest-example"><span class="digest-label">Один пример · современный разбор</span><p>${esc(d.example)}</p></section><section class="digest-carry"><span class="digest-label">Забрать с собой</span><p>${esc(d.carry)}</p></section><div class="digest-actions"><button class="primary-button" data-tab-switch="${['galton','pascal-fermat'].includes(idea.id)?'practice':'learn'}">${['galton','pascal-fermat'].includes(idea.id)?'Попробовать опыт':'Разобрать по шагам'} ↗</button>${histories[idea.id]?'<button class="text-button" data-tab-switch="history">Задача и поворот мысли →</button>':''}</div>${storyContinuationHTML(idea)}`;}
+@@ -3426 +3556 @@
+-  function practiceHTML(idea){if(idea.id==='pascal-fermat')return `${pointsRulesHTML(idea)}<div id="pointsMount"></div>${formulaHTML(idea)}${window.PointsLab.lessonHTML()}${quizHTML(idea)}${reflectionHTML(idea)}${relationsHTML(idea)}`;if(idea.id==='galton')return `<div class="reading-block"><h3>Предскажи. Затем проверь.</h3><p>Что изменится, если добавить больше шариков? А если добавить рядов? У этих параметров разные роли.</p></div><div id="galtonMount"></div>${quizHTML(idea)}${reflectionHTML(idea)}${nextHTML(idea)}`;return `${readingBlock('Сначала попробуй объяснить',idea.hook||idea.problem)}<p class="source-intro">Закрой объяснение и восстанови главную мысль. Затем выбери ответ — так легче заметить, что уже понятно, а что стоит разобрать ещё раз.</p>${quizHTML(idea)}${readingBlock('Проверь на примере',idea.example)}${reflectionHTML(idea)}${nextHTML(idea)}`;}
++  function practiceHTML(idea){if(idea.id==='pascal-fermat')return `${pointsRulesHTML(idea)}<div id="pointsMount"></div>${formulaHTML(idea)}${window.PointsLab.lessonHTML()}${quizHTML(idea)}${heuristicHTML(idea)}${relationsHTML(idea)}`;if(idea.id==='galton')return `<div class="reading-block"><h3>Предскажи. Затем проверь.</h3><p>Что изменится, если добавить больше шариков? А если добавить рядов? У этих параметров разные роли.</p></div><div id="galtonMount"></div>${quizHTML(idea)}${heuristicHTML(idea)}${nextHTML(idea)}`;return `${readingBlock('Сначала попробуй объяснить',idea.hook||idea.problem)}<p class="source-intro">Закрой объяснение и восстанови главную мысль. Затем выбери ответ — так легче заметить, что уже понятно, а что стоит разобрать ещё раз.</p>${quizHTML(idea)}${readingBlock('Проверь на примере',idea.example)}${heuristicHTML(idea)}${nextHTML(idea)}`;}
+@@ -3438 +3568 @@
+-  function renderIdea(){const idea=byId.get(state.selected);if(!idea)return;cleanupLab();const tabs=[['overview','Идея'],...(histories[idea.id]?[['history','История']]:[]),['learn','Разбор'],['practice','Опыт'],['sources','Источники'],['code','Python']];$('#panelContent').innerHTML=`${panelTools()}<header class="reader-heading"><div class="idea-meta"><span class="date">${esc(idea.yearLabel||idea.year||(idea.kind==='application'?'Сегодня':'Основа'))}</span><span>·</span><span>${esc(groupNames[idea.group]||'Идея')}</span></div><h1 class="idea-title">${esc(idea.shortTitle||idea.title)}</h1><p class="reader-authors">${compactAuthors(idea)}</p></header><div class="idea-tabs" role="tablist" aria-label="Разделы карточки">${tabs.map(([id,label])=>`<button role="tab" data-tab-switch="${id}" class="${state.tab===id?'active':''}" aria-selected="${state.tab===id}" aria-controls="ideaBody" id="tab-${id}">${label}</button>`).join('')}</div><div id="ideaBody" role="tabpanel" aria-labelledby="tab-${state.tab}">${state.tab==='overview'?overviewHTML(idea):state.tab==='history'?historyHTML(idea):state.tab==='learn'?learnHTML(idea):state.tab==='practice'?practiceHTML(idea):state.tab==='sources'?sourcesHTML(idea):codeHTML(idea)}</div>`;if(state.tab==='practice'&&idea.id==='galton'){scientificContext.set(idea.id,'board');window.GaltonLab?.mount($('#galtonMount'),state.galtonParams);}if(idea.id==='pascal-fermat'&&['learn','practice'].includes(state.tab))window.PointsLab?.mount($('#pointsMount'));else if(state.tab==='learn'){scientificContext.set(idea.id,'graph');window.IdeaVisuals?.mount($('#ideaVisual'),idea.id);}}
++  function renderIdea(){const idea=byId.get(state.selected);if(!idea)return;cleanupLab();const tabs=[['overview',idea.id==='galton'?'Рассказ':'Идея'],...(histories[idea.id]?[['history','История']]:[]),['learn','Разбор'],['practice','Опыт'],['sources','Источники'],['code','Python']];$('#panelContent').innerHTML=`${panelTools()}<header class="reader-heading"><div class="idea-meta"><span class="date">${esc(idea.yearLabel||idea.year||(idea.kind==='application'?'Сегодня':'Основа'))}</span><span>·</span><span>${esc(groupNames[idea.group]||'Идея')}</span></div><h1 class="idea-title">${esc(idea.shortTitle||idea.title)}</h1><p class="reader-authors">${compactAuthors(idea)}</p></header><div class="idea-tabs" role="tablist" aria-label="Разделы карточки">${tabs.map(([id,label])=>`<button role="tab" data-tab-switch="${id}" class="${state.tab===id?'active':''}" aria-selected="${state.tab===id}" aria-controls="ideaBody" id="tab-${id}">${label}</button>`).join('')}</div><div id="ideaBody" role="tabpanel" aria-labelledby="tab-${state.tab}">${state.tab==='overview'?overviewHTML(idea):state.tab==='history'?historyHTML(idea):state.tab==='learn'?learnHTML(idea):state.tab==='practice'?practiceHTML(idea):state.tab==='sources'?sourcesHTML(idea):codeHTML(idea)}</div>`;if(idea.id==='galton'&&['overview','practice'].includes(state.tab)){const mount=state.tab==='overview'?$('#galtonStoryLab'):$('#galtonMount');if(mount){scientificContext.set(idea.id,'board');window.GaltonLab?.mount(mount,state.galtonParams||(state.tab==='overview'?{n:4,M:100,p:0.5,seed:42}:undefined));}}if(idea.id==='pascal-fermat'&&['learn','practice'].includes(state.tab))window.PointsLab?.mount($('#pointsMount'));else if(state.tab==='learn'){scientificContext.set(idea.id,'graph');window.IdeaVisuals?.mount($('#ideaVisual'),idea.id);}}
+@@ -3440,4 +3569,0 @@
+-  function notebook(){
+-    window.VerticalAtlas?.showReader();cleanupLab();state.panel='notebook';$('.map-area').classList.add('panel-open');const selected=ideas.filter(inNotebook);
+-    $('#panelContent').innerHTML=`${panelTools()}<span class="eyebrow">То, что остаётся с тобой</span><h1 class="catalog-title">Мои знания</h1><p class="catalog-copy">Сохраняй полезные правила из карточек. Проверенные идеи тоже появляются здесь; любую можно убрать. Вернись позже и попробуй восстановить мысль без объяснения.</p>${selected.length?'<div class="code-actions"><button class="primary-button" id="exportNotes">Скачать конспект ↓</button><button class="secondary-button" id="recallIdea">Вспомнить идею</button></div>':'<div class="takeaway"><h3>Забери одну полезную мысль</h3><p>В карточке нажми «Забрать в конспект». Здесь появятся эвристика, вопрос к данным и ссылки к источникам. Проходить тест для сохранения не нужно.</p></div><button class="primary-button" data-open="chance">Начать с основ →</button>'}${selected.map(i=>{const g=genesis[i.id],h=g?.heuristic;return `<article class="notebook-card"><span class="notebook-status">${state.progress[i.id]?.correct?'Понимание проверено':'Сохранено для изучения'}</span><h3><button class="text-button" data-open="${esc(i.id)}">${esc(i.title)} ↗</button></h3>${h?`<h4>${esc(h.name)}</h4><p>${esc(h.rule)}</p><p class="notebook-question">${esc(h.question)}</p><details class="reading-details"><summary>Применение и границы</summary><p>${esc(g.useNow)}</p><p>${esc(h.trap)}</p></details>`:`<p>${esc(i.takeaway||i.summary)}</p>`}${state.notes[i.id]?`<p class="own-note">Твоя мысль: ${esc(state.notes[i.id])}</p>`:''}<button class="text-button" data-open="${esc(i.id)}" data-tab="practice">Вспомнить без объяснения →</button>${saveIdeaButton(i)}</article>`;}).join('')}<p class="local-note">Конспект хранится в этом браузере. Скачай его вместе с генезисом, формулами и ссылками, чтобы унести с собой.</p>`;$('#inspector').scrollTop=0;
+-  }
+@@ -3445,8 +3570,0 @@
+-  function notesMarkdown(){
+-    const selected=ideas.filter(inNotebook),labels=[['what','Что появилось'],['when','Когда'],['practice','Как применялось'],['development','Как развивалось'],['useNow','Как использовать сейчас']];
+-    return ['# Мой атлас идей','','Генезис, эвристики и источники по вероятности и статистике. Эвристики — современные памятки атласа, а не цитаты исторических авторов.','',...selected.flatMap(i=>{
+-      const g=genesis[i.id],h=g?.heuristic,p=portraits[i.id];
+-      return [`## ${i.title}`,'',...(p?.authors||[]).map(a=>`${a.name} (${a.life})`),'',...(g?['### Генезис','',...labels.map(([key,label])=>`- **${label}:** ${g[key]}`),'']:[]),...(h?['### Ментальная эвристика: '+h.name,'',h.rule,'','**Вопрос к данным:** '+h.question,'','**Граница применения:** '+h.trap,'']:[i.takeaway||i.summary,'']),...(p?['### История и смысл практики','','История идеи: '+p.ideaHistory.text,'','Интерпретация практики: '+p.thickDescription.text,'']:[]),...(displayedFormula(i)?['### Формулы','',displayedFormula(i).markdown,'']:[]),...(state.notes[i.id]?['Моя мысль: '+state.notes[i.id],'']:[]),'### Источники','',...allSources(i).map(source=>`- [${source.title}](${source.url})${source.locator?' — '+source.locator:''}`),''];
+-    })].join('\n');
+-  }
+-  function exportNotes(){download('my-atlas-notes.md',notesMarkdown(),'text/markdown;charset=utf-8');toast('Конспект сохранён в файл');}
+@@ -3459,3 +3577,2 @@
+-    const option=e.target.closest('[data-answer]');if(option){const idea=byId.get(option.closest('[data-quiz]').dataset.quiz);const answer=Number(option.dataset.answer);state.answers[idea.id]={answer,correct:answer===idea.quiz.correct};state.progress[idea.id]={...state.progress[idea.id],answer,correct:answer===idea.quiz.correct||Boolean(state.progress[idea.id]?.correct),at:Date.now()};save();const section=option.closest('[data-quiz]');section.querySelectorAll('[data-answer]').forEach(b=>{b.classList.toggle('chosen',Number(b.dataset.answer)===answer);b.classList.toggle('correct',answer===idea.quiz.correct&&Number(b.dataset.answer)===answer);b.setAttribute('aria-pressed',Number(b.dataset.answer)===answer);});section.querySelector('.quiz-feedback').innerHTML=answer===idea.quiz.correct?'<strong>Да, именно так.</strong> '+esc(idea.quiz.explanation):'Попробуй ещё раз: какой шаг рассуждения здесь важен?';drawMap();return;}
+-    const bookmark=e.target.closest('[data-save-idea]');if(bookmark){const idea=byId.get(bookmark.dataset.saveIdea),saved=!inNotebook(idea);state.progress[idea.id]={...state.progress[idea.id],saved,savedAt:Date.now()};const persisted=save();if(state.panel==='notebook')notebook();if(persisted)toast(saved?'Эвристика добавлена в конспект':'Идея убрана из конспекта');return;}
+-    const mathCopy=e.target.closest('[data-copy-math]');if(mathCopy){const value=displayedFormula(byId.get(mathCopy.dataset.copyMath)).markdown;try{await navigator.clipboard.writeText(value);toast('Формула скопирована в Markdown');}catch(_){toast('Markdown формулы можно взять из скачанного конспекта');}return;}
++    const option=e.target.closest('[data-answer]');if(option){const idea=byId.get(option.closest('[data-quiz]').dataset.quiz);const answer=Number(option.dataset.answer);state.answers[idea.id]={answer,correct:answer===idea.quiz.correct};const section=option.closest('[data-quiz]');section.querySelectorAll('[data-answer]').forEach(b=>{b.classList.toggle('chosen',Number(b.dataset.answer)===answer);b.classList.toggle('correct',answer===idea.quiz.correct&&Number(b.dataset.answer)===answer);b.setAttribute('aria-pressed',Number(b.dataset.answer)===answer);});section.querySelector('.quiz-feedback').innerHTML=answer===idea.quiz.correct?'<strong>Да, именно так.</strong> '+esc(idea.quiz.explanation):'Попробуй ещё раз: какой шаг рассуждения здесь важен?';return;}
++    const mathCopy=e.target.closest('[data-copy-math]');if(mathCopy){const value=displayedFormula(byId.get(mathCopy.dataset.copyMath)).markdown;try{await navigator.clipboard.writeText(value);toast('Формула скопирована в Markdown');}catch(_){toast('Не удалось скопировать формулу. Попробуй ещё раз.');}return;}
+@@ -3466 +3582,0 @@
+-    if(id==='notebookButton'){notebook();return;}
+@@ -3472,2 +3587,0 @@
+-    if(id==='exportNotes'){exportNotes();return;}
+-    if(id==='recallIdea'){const saved=ideas.filter(inNotebook);saved.sort((a,b)=>(state.progress[a.id]?.at||0)-(state.progress[b.id]?.at||0));if(saved[0])openIdea(saved[0].id,{tab:'practice'});return;}
+@@ -3477,2 +3591,2 @@
+-  document.addEventListener('galton:change',e=>{state.galtonParams=e.detail;save();});
+-  document.addEventListener('input',e=>{if(e.target.id==='searchInput'||e.target.id==='catalogSearch'){state.query=e.target.value;$('#searchInput').value=state.query;drawMap();if(state.panel==='catalog')catalog();}if(e.target.matches('[data-note]')){state.notes[e.target.dataset.note]=e.target.value;save();}});
++  document.addEventListener('galton:change',e=>{state.galtonParams=e.detail;});
++  document.addEventListener('input',e=>{if(e.target.id==='searchInput'||e.target.id==='catalogSearch'){state.query=e.target.value;$('#searchInput').value=state.query;drawMap();if(state.panel==='catalog')catalog();}});
+@@ -3488 +3602 @@
+-  function setPanelWidth(value){const max=Math.min(document.body.classList.contains('vertical-atlas')?1100:900,Math.max(340,innerWidth-(document.body.classList.contains('vertical-atlas')?80:350)));const width=Math.round(Math.max(340,Math.min(max,value)));document.documentElement.style.setProperty('--panel-width',width+'px');resizer.setAttribute('aria-valuenow',width);try{localStorage.setItem(document.body.classList.contains('vertical-atlas')?'atlas-vertical-panel-width':'atlas-panel-width',width);}catch(_){}renderTimeline();$('.map-area').classList.toggle('narrow',$('#mapViewport').clientWidth<640);}
++  function setPanelWidth(value){const max=Math.min(document.body.classList.contains('vertical-atlas')?1100:900,Math.max(340,innerWidth-(document.body.classList.contains('vertical-atlas')?80:350)));const width=Math.round(Math.max(340,Math.min(max,value)));document.documentElement.style.setProperty('--panel-width',width+'px');resizer.setAttribute('aria-valuenow',width);renderTimeline();$('.map-area').classList.toggle('narrow',$('#mapViewport').clientWidth<640);}
+@@ -3494,2 +3608 @@
+-  try{const w=Number(localStorage.getItem(document.body.classList.contains('vertical-atlas')?'atlas-vertical-panel-width':'atlas-panel-width'));if(w&&innerWidth>800)setPanelWidth(w);}catch(_){}
+-  updateBadge();renderWelcome();drawMap();updateView();
++  renderWelcome();drawMap();updateView();
+@@ -3497 +3610 @@
+-  window.ATLAS_APP={openIdea,setMode,home,state,exportNotes};
++  window.ATLAS_APP={openIdea,setMode,home,state};
