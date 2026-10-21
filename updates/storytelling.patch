@@ -1,0 +1,236 @@
+--- a/index.html
++++ b/index.html
+@@ -456,0 +457,22 @@
++/* A question carries the reader between chapters; the text stays beside its image. */
++.journey-next{display:grid;grid-template-columns:185px minmax(0,1fr) 20px;align-items:center;gap:24px;padding-bottom:16px;line-height:1.55}
++.journey-next .bridge-meta{font-size:9px;letter-spacing:.04em}
++.journey-next .bridge-question{font-size:13px;letter-spacing:0;color:var(--ink);max-width:660px}
++.journey-next .bridge-arrow{font-size:21px;text-align:right}
++.journey-next:hover .bridge-question{color:var(--highlight)}
++.vertical-atlas[data-design=archive] .spread-hook{font-size:15px;line-height:1.7;max-width:550px}
++.journey-finish>p{max-width:660px;line-height:1.8;margin-bottom:24px}
++.journey-apply{display:inline-flex;align-items:center;gap:30px;background:var(--ink);color:var(--paper);font-size:12px;padding:14px 18px;margin:0 25px 15px 0;min-height:46px}
++.vertical-atlas .journey-apply:hover{background:var(--highlight);color:var(--paper)}
++.journey-apply:focus-visible,.story-continue:focus-visible{outline:2px solid var(--highlight);outline-offset:4px}
++.story-turn{padding:0 0 25px;margin-bottom:24px;border-bottom:1px solid var(--line)}
++.story-turn p{font-size:16px;line-height:1.8;margin:0 0 15px}
++.digest-continuation{padding:28px 0 12px;margin-top:24px;border-top:1px solid var(--line)}
++.digest-continuation h3{font:400 23px/1.4 Georgia,serif;letter-spacing:-.02em;margin:0 0 20px}
++.story-continue{display:flex;justify-content:space-between;align-items:center;text-align:left;width:100%;font-size:13px;gap:24px;color:var(--text);padding:13px 16px;border:1px solid var(--line);background:var(--reader-surface)}
++.story-continue small{display:block;font-size:10px;color:var(--muted);margin-top:5px}
++.story-continue>span:last-child{font-size:23px;color:var(--accent)}
++.story-continue:hover{border-color:var(--accent)}
++@media(max-width:1100px){.journey-next{grid-template-columns:145px minmax(0,1fr) 18px;gap:18px}.vertical-atlas[data-design=archive] .spread-hook{font-size:14px}}
++@media(max-width:800px){.journey-next{grid-template-columns:minmax(0,1fr) 20px;gap:5px 15px}.journey-next .bridge-meta{grid-column:1}.journey-next .bridge-question{grid-column:1;font-size:12px}.journey-next .bridge-arrow{grid-column:2;grid-row:1/3}.journey-apply{margin-right:15px}.hero-footnote>span:first-child{max-width:65%;line-height:1.6}}
++
+@@ -508 +530 @@
+-    <section class="journey-finish" id="journeyToday"><span>[ НАШИ ДНИ ]</span><h2>История продолжается.<br><em>Следующий вопрос — твой.</em></h2><p>Те же идеи — в измерениях, экспериментах и решениях сегодня.</p><a href="#journeyStart">Вернуться к началу · 1654 ↓</a></section><div class="story-sections" id="storySections"></div>
++    <section class="journey-finish" id="journeyToday"><span>[ НАШИ ДНИ / ТВОЯ ЗАДАЧА ]</span><h2>Увидеть разницу.<br><em>Понять, что за ней.</em></h2><p>У одного варианта 12% успехов, у другого — 14%. Что нужно узнать, прежде чем выбирать победителя? Здесь сходятся вопросы о модели, разбросе и возможной ошибке решения.</p><button class="journey-apply" data-open="ab-testing" data-tab="learn">Проверить на двух долях <span aria-hidden="true">↗</span></button><a href="#journeyStart">Вернуться к началу · 1654 ↓</a></section><div class="story-sections" id="storySections"></div>
+@@ -513 +535 @@
+-      <h1 id="storyTitle"><span class="hero-title-one">Началось</span><span class="hero-title-two">с вопроса<span class="hero-period">.</span></span></h1>
++      <h1 id="storyTitle"><span class="hero-title-one">Начнём</span><span class="hero-title-two">с вопроса<span class="hero-period">.</span></span></h1>
+@@ -515 +537 @@
+-        <div class="hero-copy"><span class="micro-label">ПАРИЖ. ЛЕТО 1654 ГОДА.</span><p>Игра прервалась.<br>Как разделить ставку?</p><p class="hero-small">Из простого вопроса вырастет язык вероятности. Поднимайся по истории: от писем Паскаля и Ферма к идеям, которыми мы пользуемся сегодня.</p><a class="start-link" href="#story-pascal-fermat">Начать с 1654 года <span>↑</span></a><button class="foundation-shortcut" data-open="chance">Сначала разобраться с основами ↗</button></div>
++        <div class="hero-copy"><span class="micro-label">ПЕРЕПИСКА ПАСКАЛЯ И ФЕРМА · 1654</span><p>Матч ещё не доигран.<br>Кому принадлежит банк?</p><p class="hero-small">Один игрок ближе к победе. Делить поровну? По счёту? Паскаль и Ферма ищут цену оставшихся возможностей. Начнём с их задачи и поднимемся к другим вопросам: как измерять, делать выводы и замечать собственные ошибки.</p><a class="start-link" href="#story-pascal-fermat">Начать с 1654 года <span>↑</span></a><button class="foundation-shortcut" data-open="chance">Сначала разобраться с основами ↗</button></div>
+@@ -518 +540 @@
+-      <div class="hero-footnote"><span>ИСТОРИЯ ВЕРОЯТНОСТИ И СТАТИСТИКИ</span><span>ЛИСТАЙ ВВЕРХ / К НАШИМ ДНЯМ ↑</span></div>
++      <div class="hero-footnote"><span>МАРШРУТ ВОПРОСОВ · ПРЯМЫЕ ИСТОРИЧЕСКИЕ СВЯЗИ — В КАРТОЧКАХ</span><span>ЛИСТАЙ ВВЕРХ / К НАШИМ ДНЯМ ↑</span></div>
+@@ -2853,0 +2876,154 @@
++(function () {
++  'use strict';
++
++  // Editorial bridges use the primary-source passages already documented in
++  // history-early.js and history-classical.js. “next” is a reading question,
++  // never evidence that adjacent milestones directly influenced one another.
++  window.ATLAS_STORIES = Object.assign(window.ATLAS_STORIES || {}, {
++    'pascal-fermat': {
++      opening: 'В письме 1654 года Паскаль рассматривает игру до трёх побед: один игрок выиграл две партии, другой — одну. На кону 64 пистоля, но игра прервана. Деление по счёту кажется естественным. Однако счёт ещё не показывает, какие возможности выиграть остались у каждого. Как оценить это право?',
++      shift: 'Паскаль оценивает ближайшие продолжения: после следующей партии первый игрок либо получит весь банк, либо окажется в равном положении с соперником. Ферма считает возможные последовательности. Оба подхода направляют внимание на оставшиеся возможности. Справедливая доля оказывается стоимостью будущего права, а прошлый счёт помогает определить это право.',
++      next: 'Как превратить разовый расчёт раздела ставки в общее правило оценки шанса?'
++    },
++    huygens: {
++      opening: 'Гюйгенс знает о французских игровых задачах, но их методы ещё не опубликованы. В трактате 1657 года он начинает с малого: сколько стоит возможность получить одну из нескольких выплат? Чтобы строить дальнейшие решения, нужно обосновать эту цену, а затем научиться переносить правило на сложные игры.',
++      shift: 'Он строит другие справедливые игры с теми же конечными выплатами. Такая эквивалентность оправдывает взвешенное среднее и позволяет оценивать следующие состояния как новые выплаты. Небольшое доказанное правило сокращает длинный перебор. В современной записи это математическое ожидание: оценка возможности, которая сама может никогда не выпасть отдельному игроку.',
++      next: 'А если шансы заранее неизвестны — что можно узнать из городских записей?'
++    },
++    graunt: {
++      opening: 'Лондонские сводки сообщают о погребениях, причинах смерти и движении чумы. Граунт собирает эти разрозненные сообщения в таблицы и в 1662 году публикует наблюдения. Он хочет судить о населении города, которого никто целиком не пересчитал. Но кого охватывают записи и что на самом деле позволяют вычислить?',
++      shift: 'Сопоставление многих сводок обнаруживает устойчивые отношения, которых не видно в отдельном сообщении. Для оценки населения Граунт связывает зарегистрированные события с предположениями о рождаемости, смертности и семьях. Возникает полезное различие: запись, расчёт и допущение. Проверять приходится всю эту цепочку, иначе аккуратная таблица способна поддержать ошибочный вывод.',
++      next: 'Когда множество наблюдений помогает приблизиться к устойчивой доле — и при каких условиях?'
++    },
++    bernoulli: {
++      opening: 'В «Искусстве предположений», опубликованном посмертно в 1713 году, Бернулли предлагает урну с белыми и чёрными камешками. Наблюдатель не знает её состава и возвращает каждый извлечённый камешек обратно. Повторение даёт всё новые результаты, но они колеблются. Сколько наблюдений нужно, чтобы доля результатов оказалась близка к доле камешков с заданной надёжностью?',
++      shift: 'Бернулли превращает надежду на пользу повторений в количественное утверждение: при постоянных шансах можно выбрать число испытаний под допустимую ошибку и требуемую надёжность. Это гарантия вероятности попадания в границы. Она не обещает, что каждая новая попытка обязательно улучшит уже полученную оценку или что изменяющийся мир сохранит прежние шансы.',
++      next: 'Гарантия есть. Как вычислять вероятности отклонений, когда точных слагаемых слишком много?'
++    },
++    'de-moivre': {
++      opening: 'У де Муавра есть точная биномиальная формула, но при множестве испытаний она требует тяжёлого счёта. Знать, где находится середина распределения, недостаточно: игроков интересуют и заметные отклонения. В работе 1733 года он ищет удобное приближение для равных шансов. Как сохранить вероятности, заменив громоздкую сумму плавной кривой?',
++      shift: 'Сравнивая биномиальные члены возле середины, де Муавр получает приближение с экспонентой от отрицательного квадрата. В современной записи центрирование и деление на естественный масштаб делают форму сопоставимой при разных числах испытаний. Теперь можно оценивать целые диапазоны исходов. Дискретные результаты сохраняются; непрерывная кривая служит вычислительным приближением к ним.',
++      next: 'А если известны результаты испытаний, но неизвестна сама вероятность успеха?'
++    },
++    bayes: {
++      opening: 'После смерти Байеса Прайс представляет его рукопись Королевскому обществу; статья выходит в 1763 году. Вопрос меняет направление: успехи и неудачи уже известны, а их вероятность скрыта. В модели со столом её задаёт ненаблюдаемое положение границы. Как наблюдения изменяют наши основания считать одно положение вероятнее другого?',
++      shift: 'Наблюдённые результаты перераспределяют веса возможных положений границы. Получается распределение по неизвестной вероятности, а затем вероятность её попадания в выбранный диапазон. Начальные веса заданы устройством модели со столом. Их перенос на другое событие требует отдельного обоснования: правило обновления само по себе не выбирает исходные предположения за исследователя.',
++      next: 'Другой вопрос наблюдателя: как согласовать измерения, если они противоречат друг другу?'
++    },
++    legendre: {
++      opening: 'Наблюдения кометы должны описывать одну орбиту, но ошибки измерений делают уравнения несовместимыми. Дополнительные данные уже нельзя просто подставить и получить точный ответ. В приложении к книге 1805 года Лежандр предлагает правило согласования. Если исполнить все уравнения невозможно, какое приближённое решение следует выбрать и как его вычислить?',
++      shift: 'Лежандр выбирает параметры, при которых сумма квадратов расхождений минимальна. Невыполнимое требование точного совпадения сменяется явным критерием и вычислительной процедурой. Удобство правила ещё оставляет вопрос об основаниях: почему именно квадраты подходят этим наблюдениям? Различение алгоритма и его обоснования поможет понять следующий шаг теории ошибок у Гаусса.',
++      next: 'Какой закон ошибок мог бы обосновать уже работающее правило наименьших квадратов?'
++    },
++    gauss: {
++      opening: 'Для восстановления орбиты приходится сочетать ограниченные и неточные наблюдения. В книге 1809 года Гаусс обращается к привычному арифметическому среднему для измерений одинаковой точности. Но привычка ещё не объясняет надёжность метода. Какой закон ошибок согласуется с требованием выбирать среднее — и к какому правилу оценки он приводит?',
++      shift: 'Гаусс связывает требование о среднем с определённой формой закона ошибок, а затем получает минимум квадратов через вероятность совместных наблюдений. Процедура приобретает вероятностное основание. Оно зависит от модели и её условий. Позднее Гаусс даст другое обоснование через точность сочетания наблюдений: один алгоритм допускает несколько существенно разных аргументов.',
++      next: 'Почему похожая форма возникает и при сложении ошибок с разными исходными распределениями?'
++    },
++    laplace: {
++      opening: 'В трактате 1812 года Лаплас соединяет задачи об играх с обработкой наблюдений. Для суммы множества ошибок точные формулы становятся непосильными для прямого счёта. Между тем одного среднего результата мало: нужно знать и вероятность заметной погрешности. Как получить доступный расчёт точности, не перебирая все сочетания отдельных ошибок?',
++      shift: 'Лаплас преобразует подсчёт сочетаний с помощью производящих функций, интегралов и приближений. Нормальная форма связывается с накоплением многих ошибок. В современном прочтении условия определяют, когда подробности отдельных распределений уступают место общей форме суммы. Ответом становится оценка вместе с её неопределённостью; применимость приближения остаётся самостоятельной частью задачи.',
++      next: 'Всегда ли большое число испытаний ведёт к колоколу, если сам успех редок?'
++    },
++    poisson: {
++      opening: 'В книге 1837 года о вероятности судебных решений Пуассон развивает обширный расчёт повторных испытаний. Один случай требует отдельного внимания: возможностей много, но вероятность одного из исходов очень мала. Нормальное приближение может быть неточным, особенно если ожидаемых успехов мало. Как считать наступления редкого исхода, когда увеличение числа попыток сопровождается уменьшением его шанса?',
++      shift: 'Пуассон удерживает конечным произведение числа испытаний на малую вероятность. Возникает дискретное, часто асимметричное распределение. Большое число попыток само по себе не определяет форму результата: важно, какие величины меняются вместе с ним. Современное применение этого приближения требует отдельно проверить зависимости и изменчивость шансов; редкость события таких условий не гарантирует.',
++      next: 'Вернёмся к равным шансам: как сделать накопление случайных отклонений видимым?'
++    }
++  });
++}());
++
++</script>
++  <script>
++/* Краткие входы в историю идеи. Исторические детали опираются на history-*;
++   shift и next — современная учебная подводка, не цитаты авторов.
++   Соседство в маршруте не означает прямого исторического влияния. */
++window.ATLAS_STORIES = {
++  ...(window.ATLAS_STORIES || {}),
++  galton: {
++    opening: 'Дети не повторяют родителей точно, но распределение признаков между поколениями может сохранять похожую форму. Гальтон исследует это противоречие с помощью аппарата, соединяющего стягивание дробинок к центру и случайное рассеивание. Как отдельные случайные отклонения складываются в устойчивую картину — и что именно объясняет знакомый колокол?',
++    shift: 'Аппарат позволяет развести два движения: случайное рассеивание увеличивает разброс, а стягивание к центру ограничивает его. Начнём с упрощённой доски, где можно посчитать каждый путь. Меняя число рядов отдельно от числа шариков, увидим, как устроен закон распределения и как наблюдения постепенно делают его видимым.',
++    next: 'Почему у крайних родителей средний рост детей оказывается ближе к общему центру?'
++  },
++  regression: {
++    opening: 'Гальтон описывает данные о росте 930 взрослых детей из 205 семей. У высоких родителей дети в среднем тоже высокие, но менее отклоняются от общего центра. Почему так происходит? Если принять это за силу, возвращающую каждого человека к среднему, можно неверно объяснить и результаты собственного эксперимента.',
++    shift: 'Поворот — рассматривать группу, отобранную по первому признаку, и среднее второго признака внутри неё. Несовершенная связь оставляет место разбросу. Тогда менее крайний повторный результат возможен без вмешательства. Это помогает заметить ловушку: улучшение после отбора самых неудачных случаев ещё не показывает, что помогло наше действие.',
++    next: 'Как проверить согласие целой таблицы с моделью, когда отдельные числа всегда расходятся?'
++  },
++  pearson: {
++    opening: 'Уэлдон бросает сразу двенадцать костей; Пирсон разбирает таблицу результатов 26 306 таких бросков. Наблюдаемые частоты расходятся с расчётом для честных костей. Но некоторое расхождение неизбежно даже при верной модели. Как оценить всю таблицу сразу и понять, насколько необычно её несогласие с ожиданием?',
++    shift: 'Пирсон превращает множество отклонений в одну величину и спрашивает, как она распределена при проверяемой модели. Значение получает не только размер расхождения, но и его масштаб относительно ожидаемых частот. Прежде чем считать, придётся решить, какая именно модель проверяется и какие параметры уже оценены по этим данным.',
++    next: 'Что делать, если наблюдений мало и даже их разброс приходится оценивать?'
++  },
++  student: {
++    opening: 'В опытах с сырьём и ячменём Госсет сталкивается с небольшими сериями наблюдений. Данные должны помочь оценить среднее, но по ним же приходится узнавать разброс. Подставить эту неточную оценку в формулу для известного разброса соблазнительно. Как не получить уверенный вывод из двух источников неопределённости?',
++    shift: 'В знаменателе стандартизованного среднего теперь стоит случайная оценка разброса. Госсет исследует распределение всей величины при нормальной модели наблюдений; в современной записи это t-распределение. Его более тяжёлые хвосты учитывают дополнительную неопределённость. Малую серию можно использовать осмысленно, если сохранить предпосылки, на которых построен расчёт.',
++    next: 'А если параметр нельзя измерить прямо: какие его значения лучше объясняют наблюдения?'
++  },
++  fisher: {
++    opening: 'В статье Фишера почвенную пробу последовательно разводят и отмечают, появился ли рост микроорганизмов. Концентрацию нельзя просто прочитать из таблицы ответов «есть» и «нет». При разных концентрациях такой рисунок наблюдений имеет разную вероятность. Как сравнить возможные значения неизвестной величины, сохранив данные одними и теми же?',
++    shift: 'Меняем направление взгляда: фиксируем полученные результаты и сравниваем параметры по тому, насколько вероятны эти результаты в каждой модели. Так работает правдоподобие. Его максимум предлагает оценку, а отдельные свойства метода показывают, сколько информации она сохраняет и как ведёт себя при повторении исследования.',
++    next: 'Как задать общий язык для конечных исходов, непрерывных величин и случайных траекторий?'
++  },
++  kolmogorov: {
++    opening: 'Броски монеты допускают конечный список исходов. Для движения случайной системы во времени такого списка уже недостаточно: состояния и время могут быть непрерывными. Колмогоров объединяет основания через теорию меры, опираясь на предшественников. Какие правила позволят одинаково строго рассуждать об отдельном событии и пределе бесконечной последовательности событий?',
++    shift: 'Сначала задаются исходы, допустимые события и их вероятностная мера. На этом основании строятся случайные величины, ожидания и предельные переходы. Общий язык позволяет переносить доказательства между разными задачами. Но аксиомы сами не выбирают подходящую модель реального опыта: эту связь всё ещё нужно обосновать.',
++    next: 'Другая линия того же 1933 года: как оценивать ошибки правила решения?'
++  },
++  'neyman-pearson': {
++    opening: 'Нейман и Эгон Пирсон сравнивают статистические правила, которые могут отвергнуть верную гипотезу или пропустить реальное отличие. Просто требовать поменьше ошибок недостаточно: запрет любых ложных тревог может сделать правило бесполезным. Как ограничить один риск и при этом чаще обнаруживать конкретную альтернативу в повторных опытах?',
++    shift: 'Нужно заранее назвать сравниваемые модели и допустимую вероятность ложной тревоги. Затем среди правил с таким ограничением ищут более высокую мощность против заданной альтернативы. Статистическая убедительность получает проверяемый смысл через поведение процедуры. Один и тот же порог может хорошо обнаруживать одни эффекты и почти не замечать другие.',
++    next: 'Можно ли дать похожую гарантию диапазону значений, когда нужно оценить неизвестный параметр?'
++  },
++  neyman: {
++    opening: 'По выборке нужно судить о всей совокупности. Но при другом случайном отборе получилось бы другое среднее. Нейман ставит вопрос о правиле, которое строит вокруг оценки границы с заданным покрытием. Как обещать 95% надёжности, если истинное значение неизвестно и проверить единственный полученный интервал мы не можем?',
++    shift: 'Мысленно повторяем исследование, оставляя параметр фиксированным: меняются данные и вычисленные по ним границы. Надёжность принадлежит процедуре, которая покрывает параметр в заданной доле повторений при соблюдении условий. Поэтому смысл числа 95% зависит от способа отбора наблюдений и правила построения интервала.',
++    next: 'Вернёмся к измерению: как несколько источников ошибки создают неопределённость одного результата?'
++  },
++  measurements: {
++    opening: 'Прибор вносит свой разброс, подготовка образца — свой. Для результата нужна одна оценка общей неопределённости. Можно сложить два стандартных отклонения, но при независимых ошибках это даст неверный масштаб. А общий источник колебаний изменит ответ ещё раз. Что именно складывается и какие связи нужно узнать до вычисления?',
++    shift: 'Разложим результат на источники ошибок и сначала проверим их зависимости. При независимости складываются дисперсии; стандартное отклонение получаем после извлечения корня. При зависимости потребуются ковариации. Так физическое устройство измерения определяет математический расчёт, а форма распределения суммы остаётся отдельным вопросом.',
++    next: 'Если повторять измерение, насколько точнее станет среднее и какие ошибки останутся?'
++  },
++  'sample-mean': {
++    opening: 'Повторить измерение сто раз кажется способом получить в сто раз более точный ответ. Но даже независимые повторы с одинаковым разбросом дают более медленное улучшение. К тому же смещённый прибор может уверенно повторять одну ошибку. Сколько наблюдений понадобится, чтобы действительно уменьшить случайную неопределённость среднего вдвое?',
++    shift: 'У среднего независимых наблюдений с одной конечной дисперсией разброс падает как обратный квадратный корень из числа повторов. За двукратное уменьшение случайного разброса приходится платить четырёхкратным объёмом данных. А общее смещение не исчезает: прежде чем собирать больше, полезно проверить, какой вид неопределённости мы уменьшаем.',
++    next: 'Как перенести эту логику на разницу между двумя вариантами в эксперименте?'
++  },
++  'ab-testing': {
++    opening: 'В рандомизированном эксперименте один вариант получает 12% успехов, другой — 14%. Разница видна, но при новом распределении людей результаты изменились бы. Выбор нужно обосновать до того, как случайный перевес станет убедительной историей об успехе. Как оценить неопределённость самой разницы и понять, что позволяет устройство эксперимента?',
++    shift: 'Объект оценки — разность долей с собственным случайным разбросом. Смотрим на её интервал вместе с практически значимым размером эффекта. Рандомизация обосновывает причинное сравнение при корректном проведении опыта; достаточные числа успехов и неудач поддерживают нормальное приближение. Каждое условие отвечает за свою часть вывода.',
++    next: ''
++  }
++};
++
++</script>
++  <script>
++/* Reading order connects questions; it does not assert direct historical influence. */
++window.ATLAS_STORY_ORDER = ['pascal-fermat','huygens','graunt','bernoulli','de-moivre','bayes','legendre','gauss','laplace','poisson','galton','regression','pearson','student','fisher','kolmogorov','neyman-pearson','neyman','measurements','sample-mean','ab-testing'];
++window.ATLAS_STORIES = {
++  ...(window.ATLAS_STORIES || {}),
++  chance: {
++    opening: 'Перед броском хочется назвать шанс. Но что именно мы считаем: выпадение грани, чётное число или выигрыш? Пока не определены исходы и событие, даже правильная дробь может отвечать на другой вопрос.',
++    shift: 'Первый шаг — описать возможные исходы и выделить нужное событие. Только затем назначать вероятности. Это современный учебный вход в язык модели, а не отдельное открытие с одной датой.',
++    next: 'Когда сведения об одном событии меняют шанс другого?'
++  },
++  independence: {
++    opening: 'После нескольких решек легко ждать орла. В модели независимых бросков у монеты нет памяти. Но слово «случайно» само по себе ничего не доказывает. Надо выяснить, меняет ли знание прошлого шансы следующего исхода.',
++    shift: 'Независимость позволяет умножать вероятности определённых событий. Это свойство совместной модели, которое нужно обосновать устройством опыта: повторение ещё не гарантирует независимости.',
++    next: 'Если отдельные шаги понятны, как пересчитать все возможные пути?'
++  },
++  combinations: {
++    opening: 'Три орла в пяти бросках могут появиться в разном порядке. Если посчитать только число орлов, легко потерять часть возможностей. Как перечислить пути, не пропустив ни одного и не посчитав один дважды?',
++    shift: 'Выбор позиций для успехов превращает перечисление в счёт сочетаний. Затем каждый путь получает свой вероятностный вес. Равное число путей означает равные шансы лишь там, где сами пути равновероятны.',
++    next: 'Как соединить число путей и вероятность каждого из них?'
++  },
++  binomial: {
++    opening: 'В серии испытаний важен итог: сколько раз случится успех? Один и тот же итог складывается из многих последовательностей. Нужно совместить число этих путей с их весами, сохранив условия опыта.',
++    shift: 'При независимых испытаниях с одной вероятностью успеха каждый путь с k успехами имеет одинаковый вес. Умножение этого веса на число путей даёт биномиальную вероятность.',
++    next: 'Когда испытаний очень много, можно ли заменить точный счёт приближением?'
++  }
++};
++
++</script>
++  <script>
+@@ -3068 +3244 @@
+-    let s=label('ДВЕ ДОЛИ · ОДНА РАЗНОСТЬ','Равные доли дают разность ноль · интервал показывает неопределённость');
++    let s=label('ДВЕ ДОЛИ · ОДНА РАЗНОСТЬ','По 1000 человек в группе · разница ещё не определяет победителя');
+@@ -3070,6 +3246,7 @@
+-      const x0=190+g*330;s+=center(x0+85,151,g?'B · 12%':'A · 12%',27,g?C.accent:C.ink);
+-      for(let k=0;k<100;k++)s+=dot(x0+(k%10)*19,188+Math.floor(k/10)*16,4.5,k<12?(g?C.accent:C.ink):C.line,{opacity:k<12?1:.65});
+-    }
+-    s+=line(190,424,710,424,C.line,2)+line(450,390,450,460,C.muted,2,{'stroke-dasharray':'4 7'});
+-    s+=line(280,424,620,424,C.accent,5)+line(280,412,280,436,C.accent,2)+line(620,412,620,436,C.accent,2)+dot(450,424,7,C.ink);
+-    s+=center(450,495,'Разность B − A = 0 п.п.',24,C.ink);return s;
++      const x0=190+g*330,successes=g?14:12;s+=center(x0+85,151,g?'B · 14%':'A · 12%',27,g?C.accent:C.ink);
++      for(let k=0;k<100;k++)s+=dot(x0+(k%10)*19,188+Math.floor(k/10)*16,4.5,k<successes?(g?C.accent:C.ink):C.line,{opacity:k<successes?1:.65});
++    }
++    const x=v=>190+(v+4)/12*520,half=1.96*Math.sqrt(.12*.88/1000+.14*.86/1000)*100,lo=x(2-half),hi=x(2+half);
++    s+=line(190,424,710,424,C.line,2)+line(x(0),390,x(0),450,C.muted,2,{'stroke-dasharray':'4 7'})+center(x(0),473,'0',17,C.muted);
++    s+=line(lo,424,hi,424,C.accent,5)+line(lo,412,lo,436,C.accent,2)+line(hi,412,hi,436,C.accent,2)+dot(x(2),424,7,C.ink);
++    s+=center(450,520,'Разность: 2 п.п. · 95%-интервал: [−0,95; 4,95]',21,C.ink);return s;
+@@ -3240 +3417,8 @@
+-  function overviewHTML(idea){const d=digestFor(idea);return `<section class="digest-intro"><h2>${esc(d.question)}</h2><p>${esc(d.idea)}</p></section><figure class="digest-visual">${window.AtlasArt?.svg(idea.id)||''}</figure><section class="digest-example"><span class="digest-label">Один пример · современный разбор</span><p>${esc(d.example)}</p></section><section class="digest-carry"><span class="digest-label">Забрать с собой</span><p>${esc(d.carry)}</p>${saveIdeaButton(idea)}</section><div class="digest-actions"><button class="primary-button" data-tab-switch="${['galton','pascal-fermat'].includes(idea.id)?'practice':'learn'}">${['galton','pascal-fermat'].includes(idea.id)?'Попробовать опыт':'Разобрать по шагам'} ↗</button>${histories[idea.id]?'<button class="text-button" data-tab-switch="history">Как появилась идея →</button>':''}</div>`;}
++  function storyContinuationHTML(idea){
++    const order=idea.kind==='foundation'?['chance','independence','combinations','binomial','de-moivre']:window.ATLAS_STORY_ORDER||[],index=order.indexOf(idea.id),next=index>=0?byId.get(order[index+1]):null;
++    if(!next)return '';
++    const question=window.ATLAS_STORIES?.[idea.id]?.next||digestFor(next).question;
++    const label=idea.kind==='foundation'?'Дальше в разборе':next.kind==='history'&&idea.kind==='history'&&next.year===idea.year?'Другая линия того же года':'Следующий вопрос';
++    return `<section class="digest-continuation"><span class="digest-label">${esc(label)}</span><h3>${esc(question)}</h3><button class="story-continue" data-open="${esc(next.id)}"><span>${esc(next.shortTitle||next.title)}<small>${esc(next.kind==='history'?next.year:next.kind==='application'?'Современное применение':'Учебная основа')}</small></span><span aria-hidden="true">↑</span></button></section>`;
++  }
++  function overviewHTML(idea){const d=digestFor(idea);return `<section class="digest-intro"><h2>${esc(d.question)}</h2><p>${esc(d.idea)}</p></section><figure class="digest-visual">${window.AtlasArt?.svg(idea.id)||''}</figure><section class="digest-example"><span class="digest-label">Один пример · современный разбор</span><p>${esc(d.example)}</p></section><section class="digest-carry"><span class="digest-label">Забрать с собой</span><p>${esc(d.carry)}</p>${saveIdeaButton(idea)}</section><div class="digest-actions"><button class="primary-button" data-tab-switch="${['galton','pascal-fermat'].includes(idea.id)?'practice':'learn'}">${['galton','pascal-fermat'].includes(idea.id)?'Попробовать опыт':'Разобрать по шагам'} ↗</button>${histories[idea.id]?'<button class="text-button" data-tab-switch="history">Задача и поворот мысли →</button>':''}</div>${storyContinuationHTML(idea)}`;}
+@@ -3251 +3435 @@
+-  function historyHTML(idea){const h=histories[idea.id];if(!h)return overviewHTML(idea);const d=digestFor(idea),m=window.ATLAS_VERTICAL_MEDIA?.[idea.id];return `<div class="digest-context"><span class="digest-label">Исходный вопрос</span><p>${esc(d.context)}</p></div>${m&&idea.id!=='de-moivre'?`<figure class="reader-document"><img src="${esc(m.src||m.local_path)}" alt="${esc(m.title)}" width="${m.width}" height="${m.height}"><figcaption>${esc(m.caption)} <a href="${esc(m.source_url)}" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption></figure>`:''}${[['context','Мир, в котором возник вопрос'],['scene','Какую задачу решали'],['turn','Поворот в рассуждении'],['tools','Какие средства были у автора'],['afterlife','Как развивалась идея']].map(([key,title])=>`<details class="history-chapter"><summary>${title}</summary><p>${esc(h[key])}</p></details>`).join('')}<details class="history-chapter"><summary>Авторы и их жизнь</summary>${authorHTML(idea)}</details><details class="history-chapter"><summary>Генезис и современное применение</summary>${genesisHTML(idea)}</details><details class="history-chapter"><summary>Исторический смысл и интерпретация</summary>${lensesHTML(idea)}<p>${esc(h.caution)}</p></details><details class="history-chapter"><summary>Как читать первоисточник</summary>${(h.readingGuide||[]).map(g=>`<article class="reading-guide"><h4>${esc(g.title)}</h4><div class="locator">${esc(g.locator)}</div><p>${esc(g.question)}</p><p>${esc(g.bridge)}</p><a href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Открыть текст ↗</a></article>`).join('')}</details>`;}
++  function historyHTML(idea){const h=histories[idea.id];if(!h)return overviewHTML(idea);const d=digestFor(idea),story=window.ATLAS_STORIES?.[idea.id],m=window.ATLAS_VERTICAL_MEDIA?.[idea.id];return `<div class="digest-context"><span class="digest-label">Исходный вопрос</span><p>${esc(story?.opening||d.context)}</p></div>${story?.shift?`<section class="story-turn"><span class="digest-label">Поворот в рассуждении · современный разбор</span><p>${esc(story.shift)}</p><button class="text-button" data-tab-switch="sources">Проверить по первоисточнику ↗</button></section>`:''}${m&&idea.id!=='de-moivre'?`<figure class="reader-document"><img src="${esc(m.src||m.local_path)}" alt="${esc(m.title)}" width="${m.width}" height="${m.height}"><figcaption>${esc(m.caption)} <a href="${esc(m.source_url)}" target="_blank" rel="noopener noreferrer">Источник ↗</a></figcaption></figure>`:''}${[['context','Мир, в котором возник вопрос'],['scene','Какую задачу решали'],['turn','Поворот в рассуждении'],['tools','Какие средства были у автора'],['afterlife','Как развивалась идея']].map(([key,title])=>`<details class="history-chapter"><summary>${title}</summary><p>${esc(h[key])}</p></details>`).join('')}<details class="history-chapter"><summary>Авторы и их жизнь</summary>${authorHTML(idea)}</details><details class="history-chapter"><summary>Генезис и современное применение</summary>${genesisHTML(idea)}</details><details class="history-chapter"><summary>Исторический смысл и интерпретация</summary>${lensesHTML(idea)}<p>${esc(h.caution)}</p></details><details class="history-chapter"><summary>Как читать первоисточник</summary>${(h.readingGuide||[]).map(g=>`<article class="reading-guide"><h4>${esc(g.title)}</h4><div class="locator">${esc(g.locator)}</div><p>${esc(g.question)}</p><p>${esc(g.bridge)}</p><a href="${esc(g.url)}" target="_blank" rel="noopener noreferrer">Открыть текст ↗</a></article>`).join('')}</details>${storyContinuationHTML(idea)}`;}
+@@ -3327 +3511 @@
+-  const ordered=order.map(id=>byId.get(id)),chronology=ordered.filter(i=>i.kind!=='foundation').slice().reverse();
++  const ordered=order.map(id=>byId.get(id)),chronology=window.ATLAS_STORY_ORDER.map(id=>byId.get(id)),stories=window.ATLAS_STORIES||{};
+@@ -3365 +3549,9 @@
+-  function renderStory(){const list=ordered.filter(matches);visibleIds=new Set(list.map(i=>i.id));$('#storySections').innerHTML=list.map(i=>{const chronIndex=chronology.findIndex(v=>v.id===i.id),next=chronology[chronIndex+1],n=chronIndex<0?'Основы':String(chronIndex+1).padStart(2,'0');return `<article class="idea-spread ${media[i.id]?'has-document':''}" id="story-${i.id}" data-story-id="${i.id}" aria-labelledby="title-${i.id}">${next&&visibleIds.has(next.id)?`<a class="journey-next" href="#story-${next.id}">Дальше: ${esc(next.year||'наши дни')} <span>↑</span></a>`:''}<div class="spread-info"><div class="spread-dateline"><span class="spread-index">[ ${n} ]</span><span class="spread-date">${i.kind==='application'?'Сегодня':i.kind==='foundation'?'Азбука':i.year}</span><span class="spread-topic">${esc(groupNames[i.group])}</span></div><div class="spread-main-text"><h3 id="title-${i.id}">${esc(i.shortTitle||i.title)}</h3><p class="spread-hook">${esc(copy[i.id]||i.hook)}</p><p class="spread-author">${esc(lifeText(i))}</p></div><button class="spread-open" data-open="${i.id}" aria-label="Открыть идею: ${esc(i.shortTitle||i.title)}">Открыть идею <span aria-hidden="true">↗</span></button></div>${figure(i)}</article>`;}).join('');$('#storyCount').textContent=`${list.length} ${list.length===21?'история':'из 25'}`;$('#storyEmpty').hidden=!!list.length;$('#journeyToday').hidden=app.state.group!=='all'||!!app.state.query;document.querySelectorAll('.tree-node').forEach(n=>n.classList.toggle('filtered',!visibleIds.has(n.dataset.idea)));activeId=null;updatePosition();}
++  function renderStory(){
++    const list=ordered.filter(matches);visibleIds=new Set(list.map(i=>i.id));
++    $('#storySections').innerHTML=list.map(i=>{
++      const chronIndex=chronology.findIndex(v=>v.id===i.id),next=chronology[chronIndex+1],story=stories[i.id],n=chronIndex<0?'Основы':String(chronIndex+1).padStart(2,'0');
++      const nextLabel=next?.kind==='history'&&i.kind==='history'&&next.year===i.year?'Рядом в истории':next?.kind==='application'&&i.kind==='history'?'От истории — к практике':'Следующий вопрос';
++      return `<article class="idea-spread ${media[i.id]?'has-document':''}" id="story-${i.id}" data-story-id="${i.id}" aria-labelledby="title-${i.id}">${chronIndex>=0&&next&&visibleIds.has(next.id)?`<a class="journey-next" href="#story-${next.id}"><span class="bridge-meta">${nextLabel} · ${esc(next.year||'сегодня')}</span><span class="bridge-question">${esc(story?.next||copy[next.id])}</span><span class="bridge-arrow" aria-hidden="true">↑</span></a>`:''}<div class="spread-info"><div class="spread-dateline"><span class="spread-index">[ ${n} ]</span><span class="spread-date">${i.kind==='application'?'Сегодня':i.kind==='foundation'?'Азбука':i.year}</span><span class="spread-topic">${esc(groupNames[i.group])}</span></div><div class="spread-main-text"><h3 id="title-${i.id}">${esc(i.shortTitle||i.title)}</h3><p class="spread-hook">${esc(story?.opening||copy[i.id]||i.hook)}</p><p class="spread-author">${esc(lifeText(i))}</p></div><button class="spread-open" data-open="${i.id}" aria-label="Открыть идею: ${esc(i.shortTitle||i.title)}">Открыть идею <span aria-hidden="true">↗</span></button></div>${figure(i)}</article>`;
++    }).join('');
++    $('#storyCount').textContent=`${list.length} ${list.length===21?'история':'из 25'}`;$('#storyEmpty').hidden=!!list.length;$('#journeyToday').hidden=app.state.group!=='all'||!!app.state.query;document.querySelectorAll('.tree-node').forEach(n=>n.classList.toggle('filtered',!visibleIds.has(n.dataset.idea)));activeId=null;updatePosition();
++  }
