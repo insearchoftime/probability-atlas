@@ -8,6 +8,7 @@ on:
       - updates/compact-spreads.patch
       - updates/storytelling.patch
       - updates/galton-reader.patch
+      - updates/huygens-axis.patch
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -42,7 +43,8 @@ jobs:
           patch --batch --forward _site/index.html < updates/compact-spreads.patch
           patch --batch --forward _site/index.html < updates/storytelling.patch
           patch --batch --forward _site/index.html < updates/galton-reader.patch
-          echo "e347714cb74978f5f551c7957e6652478f5ec6cc5dbb75497ee838c6b52a7699  _site/index.html" | sha256sum --check --strict
+          patch --batch --forward _site/index.html < updates/huygens-axis.patch
+          echo "87fb695bf349ef2db44fd4d1b13fe1660501c1a81bd5416d88db00f07c91f061  _site/index.html" | sha256sum --check --strict
           cp .nojekyll NOTICE.txt _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
