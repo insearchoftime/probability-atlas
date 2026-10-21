@@ -6,6 +6,7 @@ on:
     paths:
       - updates/archive-*.b64
       - updates/compact-spreads.patch
+      - updates/storytelling.patch
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -38,7 +39,8 @@ jobs:
           cat updates/archive-*.b64 | base64 --decode | gzip --decompress > /tmp/atlas.patch
           patch --batch --forward _site/index.html < /tmp/atlas.patch
           patch --batch --forward _site/index.html < updates/compact-spreads.patch
-          echo "14afe4899f896f468646ce525b7ab57cf8e8070baab239e2e30a7cb67b183009  _site/index.html" | sha256sum --check --strict
+          patch --batch --forward _site/index.html < updates/storytelling.patch
+          echo "14541a35266f75d00102cc859936edb83f7f7888e7f4c58ba4f0eabb065891d6  _site/index.html" | sha256sum --check --strict
           cp .nojekyll NOTICE.txt _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
