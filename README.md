@@ -33,8 +33,7 @@
 GitHub Pages собирается через `.github/workflows/pages.yml`.
 Исходный `index.html` сохранён как базовая версия; актуальная страница
 восстанавливается из неё и упорядоченных частей `updates/archive-*.b64`,
-затем применяются `updates/compact-spreads.patch`, `updates/storytelling.patch`
-и `updates/galton-reader.patch`.
+затем — последовательные патчи из `updates/`, перечисленные в workflow.
 Части содержат сжатое обновление; перед публикацией проверяется SHA-256
 полученного HTML. Старый `updates/atlas.patch` больше не используется.
 
