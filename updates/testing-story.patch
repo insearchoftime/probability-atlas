@@ -1,0 +1,402 @@
+--- a/index.html
++++ b/index.html
+@@ -519,0 +520,93 @@
++
++</style>
++  <style>
++.testing-story{max-width:760px;margin:0 auto}
++.testing-lead{font:400 24px/1.55 Georgia,serif;letter-spacing:-.02em;margin:8px 0 25px;max-width:680px}
++.testing-scenario-note{font-size:11px;line-height:1.7;color:var(--muted);max-width:650px;margin:0 0 25px}
++.testing-overline{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:0 0 12px}
++.testing-toc{display:flex;gap:8px 18px;flex-wrap:wrap;margin:0 0 35px;padding:15px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
++.testing-toc button{font-size:11px;text-align:left;color:var(--text);text-decoration:underline;text-underline-offset:4px;padding:3px 0}
++.testing-chapter{margin:0 0 38px}
++.testing-chapter h2,.testing-check>h2{font:400 27px/1.3 Georgia,serif;letter-spacing:-.02em;margin:0 0 18px;scroll-margin-top:100px}
++.testing-chapter>p,.testing-heuristic li{font-size:16px;line-height:1.85;margin:0 0 18px;max-width:690px}
++.testing-callout{font-size:13px;line-height:1.8;color:var(--muted);border-left:2px solid var(--line);padding:0 0 0 17px;margin:23px 0}
++.testing-formula{padding:12px 15px;background:var(--reader-surface);margin:20px 0;overflow-x:auto;font-size:15px;line-height:1.8}
++.testing-history{background:var(--reader-surface);padding:25px;margin:30px 0 0}
++.testing-history>p{font-size:14px}
++.testing-history h2{font-size:24px}
++.testing-historical-source{font-size:11px;line-height:1.7;text-decoration:underline;text-underline-offset:4px}
++.testing-decision{margin:25px 0}
++.testing-decision figcaption{font-size:12px;color:var(--muted);margin-bottom:14px}
++.testing-table-scroll{overflow-x:auto}
++.testing-decision table,.testing-table{border-collapse:collapse;width:100%;font-size:12px;line-height:1.7}
++.testing-decision th,.testing-decision td,.testing-table th,.testing-table td{padding:13px 12px;text-align:left;border:1px solid var(--line);vertical-align:top}
++.testing-decision th,.testing-table th{font-weight:500}
++.testing-decision strong{display:block;font:400 22px/1.4 Georgia,serif;margin-top:10px}
++.testing-type-one{background:color-mix(in srgb,var(--reader-chart-primary) 8%,var(--paper))}
++.testing-type-two{background:color-mix(in srgb,var(--reader-chart-secondary) 10%,var(--paper))}
++.testing-decision>p{font-size:11px;color:var(--muted);line-height:1.7;margin:10px 0 0}
++.testing-experiment{border-top:1px solid var(--line);padding-top:25px;margin-top:30px}
++.testing-experiment>h3{font:400 24px/1.35 Georgia,serif;margin:0 0 12px}
++.testing-experiment>p{font-size:13px;line-height:1.8;color:var(--muted);margin-bottom:22px}
++.testing-lab{padding:20px;border:1px solid var(--line);background:var(--reader-surface);margin-bottom:28px;min-width:0}
++.testing-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px;margin-bottom:24px}
++.testing-controls>label:first-child,.testing-control-help,.testing-presets{grid-column:1/-1}
++.testing-controls label{display:block;font-size:12px;line-height:1.7}
++.testing-controls output{font-variant-numeric:tabular-nums}
++.testing-controls output,.testing-base output{margin-left:12px;color:var(--text)}
++.testing-controls select{display:block;width:100%;min-height:42px;margin-top:8px;padding:10px 12px;font:inherit;color:var(--text);border:1px solid var(--line);background:var(--paper)}
++.testing-controls .testing-control-help{margin:-12px 0 0;color:var(--muted)}
++.testing-assumptions{color:var(--muted);margin:18px 0}
++.testing-legend{display:flex;gap:12px 22px;flex-wrap:wrap;font-size:11px;line-height:1.7;margin:20px 0 12px}
++.testing-legend span:before,.testing-alpha-key:before,.testing-beta-key:before{content:'';display:inline-block;width:20px;height:3px;vertical-align:middle;margin-right:8px;background:var(--reader-chart-primary)}
++.testing-legend .testing-h1-key:before,.testing-beta-key:before{background:var(--reader-chart-secondary)}
++.testing-controls input[type=range]{width:100%;accent-color:var(--accent);display:block;margin:9px 0}
++.testing-lab button{font-size:11px;padding:10px 12px;border:1px solid var(--line);min-height:40px;color:var(--text);background:var(--paper);margin:3px 5px 3px 0}
++.testing-lab button:hover{border-color:var(--accent)}
++.testing-lab button[aria-pressed=true]{border-color:var(--accent);background:var(--reader-tint)}
++.testing-lab button:focus-visible,.testing-option:focus-visible,.testing-toc button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
++.testing-chart{margin:0 0 20px}
++.testing-chart svg{display:block;width:100%;height:auto;overflow:visible}
++.testing-plot text{fill:var(--text);font:14px system-ui,sans-serif}
++.testing-plot .testing-axis-label{font-size:16px}
++.testing-plot .testing-axis-note{font-size:13px;fill:var(--muted)}
++.testing-plot .testing-rejection{fill:color-mix(in srgb,var(--ink) 3%,transparent)}
++.testing-plot .testing-alpha-area{fill:color-mix(in srgb,var(--reader-chart-primary) 30%,transparent)}
++.testing-plot .testing-beta-area{fill:color-mix(in srgb,var(--reader-chart-secondary) 25%,transparent)}
++.testing-plot .testing-h0-line,.testing-plot .testing-h1-line{fill:none;stroke:var(--reader-chart-primary);stroke-width:2.5}
++.testing-plot .testing-h1-line{stroke:var(--reader-chart-secondary)}
++.testing-plot .testing-axis,.testing-plot .testing-tick line{stroke:var(--line);stroke-width:1.5}
++.testing-plot .testing-cutoff{stroke:var(--text);stroke-width:1.5;stroke-dasharray:5 5}
++.testing-axis-caption{font-size:11px;color:var(--muted);line-height:1.8;margin-top:-15px}
++.testing-axis-caption span{display:inline-block;margin:2px 16px 2px 0}
++.testing-table-wrap{overflow-x:auto}
++.testing-n-note{color:var(--muted)}
++.testing-observation{padding-left:14px;border-left:2px solid var(--accent)}
++.testing-formula .katex-display{margin:10px 0}
++.testing-chart figcaption,.testing-chart-caption{font-size:11px;line-height:1.75;color:var(--muted);margin-top:12px}
++.testing-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:20px 0}
++.testing-stats>*{padding:12px;background:var(--paper);font-size:11px;line-height:1.7;min-width:0}
++.testing-stats strong{font:400 26px/1.3 Georgia,serif;display:block;margin:6px 0}
++.testing-base{font-size:12px;line-height:1.8;border-top:1px solid var(--line);padding-top:16px;margin-top:22px}
++.testing-base summary{cursor:pointer;font-size:13px;margin-bottom:15px}
++.testing-base input[type=range]{display:block;width:100%;accent-color:var(--accent)}
++.testing-base table{font-size:11px}
++.testing-base table th,.testing-base table td{padding:9px 7px}
++.testing-lab p{font-size:12px;line-height:1.8}
++.testing-heuristic{background:var(--reader-surface);border-left:3px solid var(--accent);padding:25px 26px 10px}
++.testing-heuristic ol{padding-left:22px}
++.testing-heuristic li{font-size:14px;margin-bottom:12px;padding-left:3px}
++.testing-question{padding:23px 0;border-bottom:1px solid var(--line)}
++.testing-question h3{font-size:16px;line-height:1.7;font-weight:500;margin:0 0 15px}
++.testing-option{display:block;text-align:left;width:100%;font-size:13px;line-height:1.7;padding:13px 15px;border:1px solid var(--line);margin:8px 0;color:var(--text)}
++.testing-option.is-correct{background:var(--reader-tint);border-color:var(--accent)}
++.testing-option.is-incorrect{border-color:var(--reader-chart-secondary)}
++.testing-feedback{font-size:13px;line-height:1.8;margin:15px 0 0}
++.testing-ephemeral{font-size:10px;line-height:1.7;color:var(--muted);margin:15px 0 30px}
++.testing-reading{padding:20px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.8}
++.testing-reading summary{cursor:pointer}
++.testing-reading article{padding:20px 0 0}
++.testing-reading article>span{font-size:9px;text-transform:uppercase;color:var(--muted);letter-spacing:.06em}
++.testing-reading h3{font-size:15px;font-weight:500;margin:5px 0}
++.testing-reading p{font-size:12px;margin:0;color:var(--muted)}
++@media(max-width:520px){.testing-lead{font-size:21px}.testing-chapter h2,.testing-check>h2{font-size:24px}.testing-chapter>p{font-size:15px}.testing-lab{padding:15px}.testing-controls{grid-template-columns:1fr}.testing-stats{grid-template-columns:1fr;gap:8px}.testing-stats strong{font-size:24px}.testing-history{padding:20px 17px}.testing-decision table{font-size:11px;min-width:310px}.testing-decision th,.testing-decision td{padding:10px 8px}.testing-heuristic{padding:22px 17px 10px}.testing-formula{padding:10px;font-size:13px}.testing-plot .testing-tick text,.testing-plot .testing-cutoff-label,.testing-plot .testing-y-label{font-size:24px}.testing-plot .testing-axis-label,.testing-plot .testing-axis-note{display:none}.testing-chart{margin-bottom:-12px}.testing-axis-caption{margin-top:0}.testing-base .testing-table{min-width:290px}}
+@@ -913 +1006 @@
+-      id:'neyman-pearson',title:'Нейман и Пирсон: решения с контролем ошибок',shortTitle:'Проверка гипотез',year:1933,author:'Ежи Нейман · Эгон Пирсон',group:'inference',
++      id:'neyman-pearson',title:'Нейман и Пирсон: ошибки первого и второго рода',shortTitle:'Ошибки I и II рода',year:1933,author:'Ежи Нейман · Эгон Пирсон',group:'inference',
+@@ -3413,0 +3507,283 @@
++/* A modern teaching story, not a historical factory case.
++ * All numerical claims use independent N(mu, 10^2) individual measurements,
++ * a known population sigma, a fixed sample size and a preselected upper tail.
++ * Historical passages are separately labelled and linked to primary sources.
++ */
++window.ATLAS_TESTING_STORY = {
++  label: 'Ошибки первого и второго рода · подробный рассказ',
++  title: 'Когда поднимать тревогу, если случайность умеет притворяться изменением?',
++  lead: 'Средняя масса ста упаковок получилась 101,8 г вместо 100 г. Это повод остановить линию? Ответ зависит не только от числа на весах: нужно заранее решить, какие две ошибки мы готовы допускать и какое изменение хотим замечать.',
++  exampleLabel: 'Вымышленный современный учебный пример. Числа рассчитаны из явно заданной модели; это не результаты реального производства.',
++  chapters: [
++    {
++      id: 'situation',
++      title: 'Инженеру нужно заметить перерасход, не останавливая исправную линию',
++      paragraphs: [
++        'Представь линию, которая наполняет упаковки. В нашем упрощённом мире её нормальная настройка даёт среднюю массу 100 г. Инженера беспокоит сдвиг вверх: если среднее станет 102 г, продукт будет незаметно расходоваться быстрее. Но остановка ради проверки тоже стоит времени. Даже исправная линия выпускает упаковки разной массы, поэтому перевес отдельной упаковки ещё ничего не решает. Нужно правило, которое замечает систематическое изменение среди обычных колебаний.',
++        'Инженер выбирает случайную выборку из 100 упаковок и заранее устанавливает: при тревоге линию временно останавливают и проверяют настройку. Мы сравним нормальный режим H₀: μ = 100 г и конкретный сдвиг H₁: μ = 102 г. Речь о среднем всей производимой совокупности, а не об обязательной массе каждой упаковки. Другие сдвиги возможны; обнаруживаемость каждого из них придётся считать отдельно.'
++      ]
++    },
++    {
++      id: 'worlds',
++      title: 'Одно и то же среднее возможно в двух разных мирах',
++      paragraphs: [
++        'Чтобы увидеть проблему без скрытых условий, примем сильную учебную модель: массы независимы, имеют нормальное распределение, а стандартное отклонение отдельной упаковки известно и равно 10 г при обоих режимах. Среднее из 100 измерений колеблется гораздо слабее: его стандартная ошибка равна 10/√100 = 1 г. Если повторять выборку, в исправном режиме её средние будут группироваться около 100 г; при сдвиге — около 102 г.',
++        'Эти два распределения перекрываются. Среднее 101,8 г возможно в обоих режимах. Поэтому по одной выборке нельзя безошибочно увидеть, в каком мире мы находимся. Поворот мысли — перестать требовать от отдельного результата невозможной определённости и спросить: как часто выбранное правило будет ошибаться в каждом из миров? На графике ниже кривые описывают повторные выборочные средние, а не массы отдельных упаковок.',
++        'Обозначим физический сдвиг Δ = 2 г. По отношению к разбросу отдельной упаковки это d = Δ/σ = 0,2, а по отношению к стандартной ошибке среднего — λ = Δ√n/σ = 2. Поэтому маленькое изменение относительно отдельных наблюдений может стать различимым после усреднения.'
++      ],
++      formula: String.raw`\operatorname{SE}(\bar X)=\frac{\sigma}{\sqrt n},\qquad Z=\frac{\bar X-100}{10/\sqrt n};\qquad Z\mid H_0\sim N(0,1),\quad Z\mid H_1\sim N(\lambda,1),\quad\lambda=\frac{\Delta\sqrt n}{\sigma}.`
++    },
++    {
++      id: 'errors',
++      title: 'Два решения дают четыре исхода',
++      paragraphs: [
++        'Правило умеет делать две вещи: поднять тревогу или не поднять. Реальность при этом может быть двух видов: среднее осталось 100 г или выросло до 102 г. Тревога в исправном режиме — ошибка первого рода: мы отвергаем верную H₀. Отсутствие тревоги при сдвиге — ошибка второго рода: мы не отвергаем H₀, хотя конкретная альтернатива верна. Правильны ещё два сочетания: оставить исправную линию в работе и заметить настоящий сдвиг.',
++        'Названия описывают отношение решения к гипотезе. Они не устанавливают, какая ошибка страшнее. Для этой линии нужно сопоставить цену лишней остановки и пропущенного перерасхода; один лишь номер ошибки ответа не даёт. Обозначим вероятность ложной тревоги при H₀ буквой α, а вероятность пропуска при заданном истинном μ — β(μ). Мощность в этой точке равна 1 − β(μ): это вероятность заметить именно такой сдвиг.'
++      ],
++      formula: String.raw`\alpha=P(\text{тревога}\mid\mu=100),\qquad \beta(102)=P(\text{нет тревоги}\mid\mu=102),\qquad \operatorname{Power}(102)=1-\beta(102).`
++    },
++    {
++      id: 'threshold',
++      title: 'Сначала договориться о правиле, затем увидеть 101,8 г',
++      paragraphs: [
++        'До измерений инженер выбирает верхнюю границу: поднять тревогу, если Z > c. Верхнюю — потому что задача заранее касается роста массы. При α = 5% граница c ≈ 1,645 оставляет справа 5% площади распределения исправного режима. Для ста упаковок это означает тревогу при среднем выше 101,645 г. Если многократно проверять независимые выборки из исправного процесса по этому плану, ложная тревога будет возникать в среднем в 5% проверок.',
++        'Теперь приходит выборка со средним 101,8 г: Z = 1,8. Наше правило поднимает тревогу. Мы не узнали наверняка, что линия разладилась; мы получили результат, который заранее решили считать достаточным поводом для проверки. А насколько правило вообще способно замечать сдвиг до 102 г? Под второй кривой слева от той же границы остаётся около 36,1% площади. Это пропуски. Мощность равна примерно 63,9%: такой сдвиг обнаружится примерно в 64 из 100 повторных проверок.'
++      ],
++      formula: String.raw`c=\Phi^{-1}(1-\alpha),\qquad \beta(102)=\Phi(c-2)\approx0{,}3612,\qquad \operatorname{Power}(102)\approx0{,}6388.`,
++      callout: 'Φ — функция распределения стандартной нормальной величины: Φ(a) даёт площадь под её кривой слева от a. Для наблюдённого Z = 1,8 одностороннее p = 1 − Φ(1,8) ≈ 0,0359: при H₀ результат не меньше этого встречается примерно в 3,59% проверок. α выбирают до измерений, p вычисляют из результата. Ни одно из них не равно вероятности H₀ после данных.'
++    },
++    {
++      id: 'tradeoff',
++      title: 'Более строгая тревога пропускает больше настоящих изменений',
++      paragraphs: [
++        'Представим другой план, также выбранный до сбора данных: разрешить лишь 1% ложных тревог. Граница уходит вправо, до c ≈ 2,326; теперь среднее должно превысить 102,326 г. Та же выборка со средним 101,8 г уже не вызывает тревогу. Данные остались прежними. Изменилось соглашение о том, какое действие за ними последует.',
++        'За снижение α мы платим обнаружением: при истинном среднем 102 г вероятность пропуска становится примерно 62,8%, а мощность — 37,2%. Простое движение границы вправо уменьшает одну ошибку и увеличивает другую; движение влево действует наоборот. При неизменных данных, объёме и этом семействе правил снизить обе одним порогом не получится. Выбирать понравившийся уровень после результата нельзя: тогда фактически работает другое правило с другими частотами ошибок. Сравнение двух планов здесь помогает выбрать будущий эксперимент.'
++      ],
++      formula: String.raw`\alpha=0{,}01:\quad c\approx2{,}326,\qquad \beta(102)\approx0{,}6279,\qquad \operatorname{Power}(102)\approx0{,}3721.`
++    },
++    {
++      id: 'power',
++      title: 'Выход — получить более различимые данные',
++      paragraphs: [
++        'Инженер возвращается к плану α = 5%, но собирает 400 независимых измерений. Стандартная ошибка теперь 0,5 г. В граммах оба распределения средних сужаются, а расстояние между их центрами остаётся 2 г. В стандартизованной шкале Z центры разделены уже четырьмя стандартными ошибками. При прежней вероятности ложной тревоги 5% сдвиг до 102 г пропускается лишь примерно в 0,93% проверок. Мощность выросла до 99,07%.',
++        'Четыре раза больше измерений уменьшили стандартную ошибку вдвое. Можно сохранить α и сильно уменьшить β; можно часть выигрыша потратить на снижение обеих ошибок. Помогают также более точные измерения и удачный дизайн. Но дополнительные числа не устраняют систематическую ошибку весов. Если упаковки зависимы или собраны только в удобный момент, формула стандартной ошибки может не описывать их реальный разброс.'
++      ],
++      formula: String.raw`\beta(\mu)=\Phi\!\left(c-\frac{(\mu-100)\sqrt n}{10}\right);\qquad n=400,\ \mu=102:\quad \beta\approx0{,}00926.`
++    },
++    {
++      id: 'base-rate',
++      title: 'Пять процентов ложных тревог — среди каких проверок?',
++      paragraphs: [
++        'Есть ещё одна ловушка. Услышав α = 5%, легко решить, что среди поднятых тревог только 5% ложные. Но α считалась среди исправных режимов. Для другого вопроса нужен другой знаменатель. Вообразим 10 000 независимых проверок по плану n = 100 и α = 5%: ровно 9000 относятся к режиму со средним 100 г, а 1000 — к режиму со средним 102 г. Эти доли заданы только для учебного расчёта.',
++        'В среднем получим 450 ложных тревог среди исправных режимов и около 639 настоящих тревог среди сдвигов; примерно 361 сдвиг пропустим. Среди всех примерно 1089 тревог ложные составят уже около 41,3%. Это ожидаемые количества, не обещание точного результата каждой серии. Чтобы вычислять вероятность исправности после тревоги, нужны сведения о распространённости режимов и их моделях. Один уровень α такой вероятности не задаёт.'
++      ],
++      formula: String.raw`P(H_0\mid\text{тревога})=\frac{0{,}9\cdot0{,}05}{0{,}9\cdot0{,}05+0{,}1\cdot0{,}63876}\approx0{,}4133.`
++    },
++    {
++      id: 'planning',
++      title: 'Мощность начинается с вопроса: какой сдвиг важно заметить?',
++      paragraphs: [
++        'Теперь инженер может планировать объём осмысленно: «Хочу замечать рост среднего на 2 г с вероятностью не ниже 80%, сохраняя α = 5%». В нашей нормальной модели с известным σ для этого требуется минимум 155 независимых измерений. Число появляется из расстояния между кривыми, нужного для двух хвостов, а не из универсального правила о хорошей выборке. В формуле Δ — интересующий сдвиг в граммах, z — квантиль стандартной нормальной величины.',
++        'У мощности нет одного значения на все случаи: рост на 0,2 г заметить труднее, чем на 2 г. Поэтому фраза «мощность теста 80%» неполна без размера эффекта, объёма и модели. Полезный эффект задаётся задачей. При огромной выборке даже практически несущественный перевес может стать статистически значимым; оценка величины сдвига и интервал неопределённости помогают понять его значение для работы.'
++      ],
++      formula: [String.raw`n\ge\left(\frac{(z_{1-\alpha}+z_{0{,}80})\sigma}{\Delta}\right)^2`,String.raw`\left(\frac{(1{,}64485+0{,}84162)\cdot10}{2}\right)^2\approx154{,}56`,String.raw`n=155.`]
++    },
++    {
++      id: 'practice',
++      title: '«Не подняли тревогу» ещё не значит «подтвердили норму»',
++      paragraphs: [
++        'Вернёмся к 101,8 г. По более строгому плану α = 1% тревоги нет, но при интересующем сдвиге этот план пропускает почти две трети случаев. Молчание такого датчика даёт мало оснований для уверенности. Корректный вывод: данных недостаточно для отказа от H₀ по выбранному правилу. Если нужно показать, что отклонение достаточно мало для практики, следует заранее задать допустимые границы и использовать подходящую оценку интервала или проверку эквивалентности. Неотвержение точного равенства эту задачу не решает.',
++        'Само обещание α = 5% относится к описанному плану: одна заранее выбранная проверка после фиксированного объёма. Если постоянно добавлять упаковки и проверять заново, остановившись при первом удобном результате, прежняя калибровка не сохраняется автоматически. Для последовательного наблюдения нужен соответствующий план. Несколько показателей, несколько групп или выбор направления после просмотра данных тоже меняют пространство решений и требуют учитывать множественность.'
++      ],
++      callout: 'Мы заранее проверяли только рост массы. Если важно замечать и недолив, и перелив, нужен другой план. Например, двустороннее правило |Z| > 1,96 распределяет суммарную α = 5% между двумя хвостами. Его мощность для каждого сдвига нужно пересчитать; порог нельзя выбирать по знаку уже увиденного отклонения.'
++    },
++    {
++      id: 'closing',
++      title: 'Число не изменилось. Мы поняли, чего требуем от решения',
++      paragraphs: [
++        'Среднее 101,8 г привело к разным действиям при двух заранее заданных границах, потому что планы по-разному распределяют риски. Ни одно решение само по себе не превращает неизвестный режим в известный. У хорошего правила есть явная цена ложной тревоги, способность замечать важное изменение и условия, при которых расчёт работает. Именно это можно забрать из истории: перед решением вообразить оба мира, а затем проверить, как выбранное правило поведёт себя в каждом.'
++      ]
++    }
++  ],
++  historical: {
++    title: '1933: как сравнивать правила решений',
++    authors: 'Ежи Нейман (1894–1981) и Эгон Шарп Пирсон (1895–1980)',
++    label: 'Исторические факты и современное прочтение',
++    paragraphs: [
++      'В статье 1933 года Нейман и Эгон Пирсон обсуждают, что вообще считать эффективной проверкой гипотезы. На с. 291 они переводят вопрос к правилам поведения, которые позволяют ограничивать частоту ошибочных решений в длительном опыте. На с. 296 различают две возможности ошибиться и подчёркивают: выбор их баланса зависит от последствий и остаётся за исследователем. Это не утверждение, что один тест сообщает вероятность истинности гипотезы.',
++      'На с. 297–302 авторы ставят математическую задачу: при ограничении вероятности отказа от H₀ выбирать область, которая чаще обнаруживает заданную альтернативу. Для двух полностью заданных распределений решение связано с отношением правдоподобий. В нашей нормальной модели его рост приводит к порогу по среднему. Рассказ об упаковках — современная учебная реконструкция этой логики, а не эпизод из биографии авторов. За пределами заданного класса моделей выражение «самый мощный» требует новых условий.'
++    ]
++  },
++  heuristic: {
++    title: 'Мысленно проиграй решение в двух мирах',
++    rule: 'До данных спроси: что будет стоить ложная тревога, какое реальное изменение нельзя пропустить и хватит ли точности, чтобы различить эти случаи?',
++    steps: [
++      'Назови H₀ и важный размер изменения; отдели среднее процесса от отдельных наблюдений.',
++      'Выбери действие, направление проверки, допустимую α и нужную мощность до измерений.',
++      'Спланируй независимые наблюдения и проверь модель разброса; меняй дизайн, если кривые слишком сильно перекрываются.',
++      'После результата сообщи оценку эффекта и неопределённость. Отсутствие тревоги не выдавай за доказательство отсутствия изменения.'
++    ]
++  },
++  sources: [
++    {
++      id: 'np1933',
++      title: 'On the Problem of the Most Efficient Tests of Statistical Hypotheses',
++      author: 'J. Neyman; E. S. Pearson',
++      year: '1933',
++      url: 'https://errorstatistics.com/wp-content/uploads/2014/08/neyman-pearson-1933_on-the-problem-of-the-most-efficient-tests-of-statistical-hypotheses.pdf',
++      locator: 'Philosophical Transactions A 231, с. 289–337. С. 291: правила в повторном опыте; с. 296–297: две ошибки и их последствия; с. 298–302: две простые гипотезы.',
++      type: 'Первоисточник · полный скан',
++      guide: 'Сначала прочитай с. 291 и 296 без формул. Затем на с. 297 найди, что фиксируется, а что максимизируется. Только после этого переходи к доказательству для простых гипотез.'
++    },
++    {
++      id: 'nist-sample-size',
++      title: 'NIST/SEMATECH e-Handbook: Sample sizes required',
++      author: 'NIST/SEMATECH',
++      year: 'Справочник',
++      url: 'https://www.itl.nist.gov/div898/handbook/prc/section2/prc222.htm',
++      locator: '§7.2.2.2, Standard deviation assumed to be known: формулы для одно- и двусторонних проверок.',
++      type: 'Современный технический справочник',
++      guide: 'Сопоставь одностороннюю формулу с нашим расчётом 155 измерений. Обрати внимание на допущение об известном σ; при оценке σ из данных расчёт меняется.'
++    },
++    {
++      id: 'nist-critical-values',
++      title: 'NIST/SEMATECH e-Handbook: Critical values and p values',
++      author: 'NIST/SEMATECH',
++      year: 'Справочник',
++      url: 'https://www.itl.nist.gov/div898/handbook/prc/section1/prc131.htm',
++      locator: '§7.1.3.1, Determination of critical values и Good practice.',
++      type: 'Современный технический справочник',
++      guide: 'Проследи связь между уровнем α, критической границей и правилом, выбранным до проверки.'
++    }
++  ],
++  quiz: {
++    question: 'После проверки с α = 5% тревоги нет. Можно ли сказать: «Вероятность отсутствия сдвига равна 95%»?',
++    options: [
++      'Да: α всегда задаёт вероятность того, что вывод неверен.',
++      'Нет: α относится к тревогам при верной H₀; без мощности для важного сдвига отсутствие тревоги трудно оценить.',
++      'Да, если в выборке хотя бы 100 наблюдений.'
++    ],
++    correct: 1,
++    explanation: 'Нет. α = P(тревога | H₀), а не вероятность гипотезы после результата. Молчание при реальном сдвиге определяется β для этого сдвига. В нашем плане n = 100, α = 5% рост до 102 г пропускается примерно в 36,1% проверок.'
++  }
++};
++
++</script>
++  <script>
++window.TESTING_PYTHON_SOURCE = "\"\"\"Ошибки I и II рода: односторонняя проверка среднего.\n\nУчебная модель: независимые N(mu, sigma**2), sigma известна (10 г).\nH0: mu = 100 г; рассматриваемая H1: mu = 100 + shift г.\nОтвергаем H0, если Z = (Xbar - 100)/(10/sqrt(n)) > c.\nЗапуск: python3 testing_lab.py --n 100 --shift 2 --c 1.6448536269514722\nТолько стандартная библиотека Python; выводы: JSON, CSV и SVG.\n\"\"\"\n\nimport argparse\nimport csv\nimport json\nimport math\nfrom pathlib import Path\n\nDEFAULT_C = 1.6448536269514722\nDEFAULT_N = 100\nDEFAULT_SHIFT = 2\nDEFAULT_PREVALENCE = 0.1\n\n\ndef phi(x):\n    \"\"\"Функция распределения стандартной нормальной величины Φ(x).\"\"\"\n    return (1.0 + math.erf(x / math.sqrt(2))) / 2\n\n\ndef density(x):\n    return math.exp(-x * x / 2) / math.sqrt(2 * math.pi)\n\n\ndef model(c=DEFAULT_C, n=DEFAULT_N, shift=DEFAULT_SHIFT,\n          prevalence=DEFAULT_PREVALENCE):\n    if (not math.isfinite(c) or not isinstance(n, int) or n < 1\n            or not math.isfinite(shift) or shift < 0\n            or not math.isfinite(prevalence) or not 0 <= prevalence <= 1):\n        raise ValueError(\"Недопустимые параметры опыта\")\n    se = 10 / math.sqrt(n)\n    delta = shift / se\n    alpha = 1 - phi(c)\n    beta = phi(c - delta)\n    power = 1 - beta\n    counts = {\n        \"tn\": 10000 * (1 - prevalence) * (1 - alpha),\n        \"fp\": 10000 * (1 - prevalence) * alpha,\n        \"fn\": 10000 * prevalence * beta,\n        \"tp\": 10000 * prevalence * power,\n    }\n    signals = counts[\"fp\"] + counts[\"tp\"]\n    return dict(c=c, n=n, shift=shift, prevalence=prevalence,\n                mu0=100, mu1=100 + shift, sigma=10, se=se, delta=delta,\n                alpha=alpha, beta=beta, power=power,\n                thresholdMean=100 + c * se, counts=counts,\n                falseAmongSignals=counts[\"fp\"] / signals if signals else None)\n\n\ndef svg_chart(m):\n    \"\"\"Те же координаты и области, что в интерактивной карточке.\"\"\"\n    width, height, left, right, top, bottom = 760, 370, 46, 744, 32, 272\n    xmin, xmax = -4, max(5, m[\"delta\"] + 4)\n    def sx(x):\n        return left + (x - xmin) / (xmax - xmin) * (right - left)\n    def sy(y):\n        return bottom - y / .43 * (bottom - top)\n    def curve(mean, a=xmin, b=xmax):\n        return \" \".join(\n            (\"M\" if j == 0 else \"L\")\n            + f\"{sx(a+(b-a)*j/280):.2f},{sy(density(a+(b-a)*j/280-mean)):.2f}\"\n            for j in range(281))\n    def area(mean, a, b):\n        a, b = max(xmin, a), min(xmax, b)\n        if a >= b:\n            return \"\"\n        return (curve(mean, a, b)\n                + f\" L{sx(b):.2f},{bottom} L{sx(a):.2f},{bottom} Z\")\n    ticks = []\n    step = 2 if xmax - xmin > 12 else 1\n    for x in range(math.ceil(xmin / step) * step, math.floor(xmax) + 1, step):\n        ticks.append(f'<line x1=\"{sx(x)}\" x2=\"{sx(x)}\" y1=\"{bottom}\" y2=\"{bottom+6}\"/>'\n                     f'<text x=\"{sx(x)}\" y=\"{bottom+25}\" text-anchor=\"middle\">{x}</text>')\n    return f'''<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 {width} {height}\" role=\"img\">\n<title>Односторонняя проверка среднего: ошибки I и II рода</title>\n<style>text{{font:14px system-ui;fill:#302e2a}}line{{stroke:#8a8478}}.curve{{fill:none;stroke-width:2.5}}</style>\n<rect width=\"100%\" height=\"100%\" fill=\"#f7f4ec\"/>\n<rect x=\"{sx(m['c'])}\" y=\"{top}\" width=\"{right-sx(m['c'])}\" height=\"{bottom-top}\" fill=\"#ece7dc\"/>\n<path d=\"{area(m['delta'],xmin,m['c'])}\" fill=\"#638f914a\"/>\n<path d=\"{area(0,m['c'],xmax)}\" fill=\"#af695354\"/>\n<path class=\"curve\" d=\"{curve(0)}\" stroke=\"#ad6550\"/>\n<path class=\"curve\" d=\"{curve(m['delta'])}\" stroke=\"#3e777b\"/>\n<line x1=\"{left}\" x2=\"{right}\" y1=\"{bottom}\" y2=\"{bottom}\"/>{''.join(ticks)}\n<line x1=\"{sx(m['c'])}\" x2=\"{sx(m['c'])}\" y1=\"{top-4}\" y2=\"{bottom+8}\" stroke-dasharray=\"5 4\"/>\n<text x=\"{sx(m['c'])}\" y=\"{top-12}\" text-anchor=\"middle\">c = {m['c']:.3f}</text>\n<text x=\"{(left+right)/2}\" y=\"{bottom+57}\" text-anchor=\"middle\">Z = (среднее − 100 г) / (10 г / √n)</text>\n<text x=\"{(left+right)/2}\" y=\"{bottom+83}\" text-anchor=\"middle\">H₀: Z ~ N(0, 1); H₁: Z ~ N({m['delta']:.2f}, 1)</text></svg>'''\n\n\ndef export(m, directory):\n    directory = Path(directory)\n    directory.mkdir(parents=True, exist_ok=True)\n    (directory / \"testing_results.json\").write_text(\n        json.dumps(m, ensure_ascii=False, indent=2), encoding=\"utf-8\")\n    with (directory / \"testing_densities.csv\").open(\"w\", newline=\"\", encoding=\"utf-8\") as stream:\n        writer = csv.writer(stream)\n        writer.writerow([\"z\", \"density_h0\", \"density_h1\", \"reject_h0\"])\n        xmin, xmax = -4, max(5, m[\"delta\"] + 4)\n        for j in range(801):\n            x = xmin + (xmax - xmin) * j / 800\n            writer.writerow([x, density(x), density(x - m[\"delta\"]), x > m[\"c\"]])\n    (directory / \"testing_chart.svg\").write_text(svg_chart(m), encoding=\"utf-8\")\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--c\", type=float, default=DEFAULT_C)\n    parser.add_argument(\"--n\", type=int, default=DEFAULT_N)\n    parser.add_argument(\"--shift\", type=float, default=DEFAULT_SHIFT)\n    parser.add_argument(\"--prevalence\", type=float, default=DEFAULT_PREVALENCE)\n    parser.add_argument(\"--output\", default=\"testing_output\")\n    args = parser.parse_args()\n    m = model(args.c, args.n, args.shift, args.prevalence)\n    export(m, args.output)\n    print(json.dumps(m, ensure_ascii=False, indent=2))\n    print(\"Файлы сохранены:\", Path(args.output).resolve())\n\n\nif __name__ == \"__main__\":\n    main()\n";
++
++</script>
++  <script>
++(() => {
++  'use strict';
++  const defaults={c:1.6448536269514722,n:100,shift:2,prevalence:0.1};
++  let params={...defaults},active=null;
++  const fmt=(x,d=2)=>Number(x).toLocaleString('ru-RU',{maximumFractionDigits:d});
++  const pct=x=>x<.0001?'<0,01%':x>.9999?'>99,99%':fmt(x*100)+'%';
++  const count=x=>x<.1?'<0,1':fmt(x,1);
++  const density=x=>Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);
++  // Φ is the normal CDF, evaluated by its convergent integral series.
++  function phi(x){
++    if(x>=8)return 1;if(x<=-8)return 0;
++    let sum=x,term=x,previous=0,denominator=1;
++    while(sum!==previous){previous=sum;denominator+=2;term*=x*x/denominator;sum+=term;}
++    return Math.max(0,Math.min(1,.5+sum*density(x)));
++  }
++  function invPhi(p){
++    if(!(p>0&&p<1))throw new RangeError('Вероятность должна быть между 0 и 1');
++    let lo=-10,hi=10;
++    for(let i=0;i<70;i++){const mid=(lo+hi)/2;if(phi(mid)<p)lo=mid;else hi=mid;}
++    return (lo+hi)/2;
++  }
++  function model(input={}){
++    const p={...defaults,...input};
++    if(!Number.isFinite(p.c)||!Number.isInteger(p.n)||p.n<1||!Number.isFinite(p.shift)||p.shift<0||!Number.isFinite(p.prevalence)||p.prevalence<0||p.prevalence>1)throw new RangeError('Недопустимые параметры опыта');
++    const se=10/Math.sqrt(p.n),delta=p.shift/se,alpha=1-phi(p.c),beta=phi(p.c-delta),power=1-beta;
++    const counts={tn:10000*(1-p.prevalence)*(1-alpha),fp:10000*(1-p.prevalence)*alpha,fn:10000*p.prevalence*beta,tp:10000*p.prevalence*power};
++    return {...p,mu0:100,mu1:100+p.shift,sigma:10,se,delta,alpha,beta,power,thresholdMean:100+p.c*se,counts,falseAmongSignals:counts.fp+counts.tp?counts.fp/(counts.fp+counts.tp):null};
++  }
++  function plot(m){
++    const W=760,H=370,L=46,R=744,T=32,B=272,xMin=-4,xMax=Math.max(5,m.delta+4),sx=x=>L+(x-xMin)/(xMax-xMin)*(R-L),sy=y=>B-y/.43*(B-T);
++    const curve=(mean,a=xMin,b=xMax)=>{const points=[];for(let j=0;j<=280;j++){const x=a+(b-a)*j/280;points.push(`${j?'L':'M'}${sx(x).toFixed(2)},${sy(density(x-mean)).toFixed(2)}`);}return points.join(' ');};
++    const area=(mean,a,b)=>{a=Math.max(xMin,a);b=Math.min(xMax,b);return a>=b?'':`${curve(mean,a,b)} L${sx(b).toFixed(2)},${B} L${sx(a).toFixed(2)},${B} Z`;};
++    const step=xMax-xMin>12?2:1,ticks=[];
++    for(let x=Math.ceil(xMin/step)*step;x<=xMax;x+=step)ticks.push(`<g class="testing-tick"><line x1="${sx(x)}" x2="${sx(x)}" y1="${B}" y2="${B+6}"/><text x="${sx(x)}" y="${B+25}" text-anchor="middle">${x}</text></g>`);
++    return `<svg class="testing-plot" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="testing-plot-title testing-plot-desc"><title id="testing-plot-title">Два распределения и порог решения</title><desc id="testing-plot-desc">При норме среднее Z равно нулю, при сдвиге — ${fmt(m.delta)}. Порог ${fmt(m.c,3)}. Справа от него отвергаем H₀. Ошибка первого рода ${pct(m.alpha)}, второго рода ${pct(m.beta)}.</desc><text class="testing-y-label" x="${L}" y="${T-12}">Плотность</text><rect class="testing-rejection" x="${sx(m.c)}" y="${T}" width="${R-sx(m.c)}" height="${B-T}"/><path class="testing-beta-area" d="${area(m.delta,xMin,m.c)}"/><path class="testing-alpha-area" d="${area(0,m.c,xMax)}"/><path class="testing-h0-line" d="${curve(0)}"/><path class="testing-h1-line" d="${curve(m.delta)}"/><line class="testing-axis" x1="${L}" x2="${R}" y1="${B}" y2="${B}"/>${ticks.join('')}<line class="testing-cutoff" x1="${sx(m.c)}" x2="${sx(m.c)}" y1="${T-4}" y2="${B+8}"/><text class="testing-cutoff-label" x="${sx(m.c)}" y="${T-12}" text-anchor="middle">c = ${fmt(m.c,3)}</text><text class="testing-axis-label" x="${(L+R)/2}" y="${B+57}" text-anchor="middle">Z = (среднее − 100 г) / (10 г / √n)</text><text class="testing-axis-note" x="${(L+R)/2}" y="${B+83}" text-anchor="middle">Единица по X — одна стандартная ошибка среднего</text></svg>`;
++  }
++  function mount(container,initial){
++    unmount();if(!container)return;
++    params={...params,...(initial||{})};
++    container.innerHTML=`<section class="testing-lab"><div class="testing-controls"><label for="testing-c">Порог c <output id="testing-c-value"></output><input id="testing-c" data-testing-c type="range" min="-1" max="4" step="0.001" value="${params.c}" aria-describedby="testing-c-help"></label><p id="testing-c-help" class="testing-control-help">Отвергаем H₀, если Z выше порога. Передвинь его и посмотри, какой ошибкой оплачивается осторожность.</p><div class="testing-presets" role="group" aria-label="Порог для заданного уровня ошибки первого рода"><button type="button" data-testing-alpha="0.05">α = 5%</button><button type="button" data-testing-alpha="0.01">α = 1%</button></div><label for="testing-n">Измерений в выборке n<select id="testing-n" data-testing-n><option value="25">25</option><option value="100">100</option><option value="154">154</option><option value="155">155</option><option value="400">400</option></select></label><label for="testing-shift">Реальный сдвиг среднего <output id="testing-shift-value"></output><input id="testing-shift" data-testing-shift type="range" min="0.5" max="4" step="0.5" value="${params.shift}"></label></div><p class="testing-assumptions">Учебная модель: независимые нормальные измерения, известное σ = 10 г. H₀: μ = 100 г. H₁: μ = <span data-testing-mu1></span>. Проверка односторонняя: ищем увеличение среднего.</p><div class="testing-legend"><span class="testing-h0-key">H₀ · процесс в норме</span><span class="testing-h1-key">H₁ · среднее сдвинулось</span></div><div class="testing-chart"></div><div class="testing-axis-caption"><p>По X — отклонение среднего от 100 г в стандартных ошибках (Z). По Y — плотность; вероятность задаёт площадь под соответствующей кривой.</p><p><span class="testing-alpha-key">α: под H₀ справа от порога</span><span class="testing-beta-key">β: под H₁ слева от порога</span></p></div><p class="testing-decision" aria-live="polite" role="status"></p><p class="testing-observation" role="status" aria-live="polite"></p><div class="testing-stats"></div><p class="testing-n-note"></p><details class="testing-base"><summary>А сколько сигналов окажутся ложными?</summary><p>Теперь представим 10 000 проверяемых партий. У каждой заранее есть своё состояние: норма или сдвиг. Зададим долю партий со сдвигом — это дополнительное предположение, которого нет в α.</p><label for="testing-prevalence">Партий со сдвигом <output id="testing-prevalence-value"></output><input id="testing-prevalence" data-testing-prevalence type="range" min="1" max="99" step="1" value="${params.prevalence*100}"></label><div class="testing-table-wrap"><table class="testing-table"><caption>Ожидаемые количества из 10 000 партий</caption><thead><tr><th scope="col">Реальное состояние</th><th scope="col">Не отвергли H₀</th><th scope="col">Отвергли H₀ · сигнал</th></tr></thead><tbody></tbody></table></div><p class="testing-base-result" aria-live="polite"></p><p class="testing-base-note">Это математические ожидания количеств, поэтому возможны дробные числа. Вероятность ложного сигнала среди всех сигналов зависит от частоты сдвига и мощности; она не равна α.</p></details></section>`;
++    const c=container.querySelector('[data-testing-c]'),n=container.querySelector('[data-testing-n]'),shift=container.querySelector('[data-testing-shift]'),prevalence=container.querySelector('[data-testing-prevalence]');
++    n.value=String(params.n);
++    function draw(){
++      const m=model(params);
++      container.querySelector('#testing-c-value').textContent=fmt(m.c,3);c.setAttribute('aria-valuetext',`Порог ${fmt(m.c,3)}, ошибка первого рода ${pct(m.alpha)}`);
++      container.querySelector('#testing-shift-value').textContent=fmt(m.shift)+' г';
++      container.querySelector('#testing-prevalence-value').textContent=pct(m.prevalence);
++      container.querySelector('[data-testing-mu1]').textContent=fmt(m.mu1)+' г';
++      container.querySelector('.testing-chart').innerHTML=plot(m);
++      container.querySelector('.testing-decision').textContent=`Порог в исходных единицах: среднее выше ${fmt(m.thresholdMean,3)} г → отвергаем H₀. Среднее не выше порога → не отвергаем H₀.`;
++      const observed=1.8/m.se;container.querySelector('.testing-observation').textContent=`Если выборка этого объёма дала среднее 101,8 г, Z = ${fmt(observed,3)}. Правило ${observed>m.c?'отвергает':'не отвергает'} H₀. Это решение по правилу, а не установленное состояние процесса.`;
++      container.querySelector('.testing-stats').innerHTML=`<article class="testing-alpha"><span>Ошибка I рода · α</span><strong>${pct(m.alpha)}</strong><p>Среди 1 000 партий <b>в норме</b> ожидаем ${count(m.alpha*1000)} ложных сигналов.</p></article><article class="testing-beta"><span>Ошибка II рода · β</span><strong>${pct(m.beta)}</strong><p>Среди 1 000 партий <b>со сдвигом на ${fmt(m.shift)} г</b> ожидаем ${count(m.beta*1000)} пропущенных сдвигов.</p></article><article class="testing-power"><span>Мощность · 1 − β</span><strong>${pct(m.power)}</strong><p>Среди тех же 1 000 партий <b>со сдвигом</b> ожидаем ${count(m.power*1000)} обнаруженных сдвигов.</p></article>`;
++      container.querySelector('.testing-n-note').textContent=`Стандартная ошибка среднего: ${fmt(m.se)} г. Стандартизованный сдвиг λ = Δ√n/σ = ${fmt(m.delta)}: на столько стандартных ошибок разнесены центры. При неизменном c рост n сохраняет α и увеличивает мощность для этого сдвига.`;
++      container.querySelector('tbody').innerHTML=`<tr><th scope="row">Норма · ${fmt(10000*(1-m.prevalence),0)} партий</th><td>${count(m.counts.tn)} · верно: без сигнала</td><td>${count(m.counts.fp)} · ошибка I рода</td></tr><tr><th scope="row">Сдвиг · ${fmt(10000*m.prevalence,0)} партий</th><td>${count(m.counts.fn)} · ошибка II рода</td><td>${count(m.counts.tp)} · верный сигнал</td></tr>`;
++      container.querySelector('.testing-base-result').textContent=`Из ${count(m.counts.fp+m.counts.tp)} ожидаемых сигналов ${count(m.counts.fp)} будут ложными: ${pct(m.falseAmongSignals)} всех сигналов. Здесь знаменатель — сигналы, а в α знаменатель — партии в норме.`;
++      container.querySelectorAll('[data-testing-alpha]').forEach(button=>button.setAttribute('aria-pressed',String(Math.abs(m.alpha-Number(button.dataset.testingAlpha))<1e-6)));
++    }
++    function changed(event){
++      if(event.target===c)params.c=Number(c.value);
++      if(event.target===n)params.n=Number(n.value);
++      if(event.target===shift)params.shift=Number(shift.value);
++      if(event.target===prevalence)params.prevalence=Number(prevalence.value)/100;
++      const preset=event.target.closest('[data-testing-alpha]');
++      if(preset){params.c=Number(preset.dataset.testingAlpha)===.05?1.6448536269514722:2.3263478740408408;c.value=String(params.c);}
++      draw();container.dispatchEvent(new CustomEvent('testing:change',{bubbles:true,detail:{...params}}));
++    }
++    container.addEventListener('input',changed);container.addEventListener('change',changed);container.addEventListener('click',changed);draw();
++    active={unmount:()=>{container.removeEventListener('input',changed);container.removeEventListener('change',changed);container.removeEventListener('click',changed);}};
++  }
++  function unmount(){active?.unmount();active=null;}
++  function getParams(){return {...params};}
++  function pythonCode(p=getParams()){
++    let code=window.TESTING_PYTHON_SOURCE||'';
++    for(const [key,value]of Object.entries({C:p.c,N:p.n,SHIFT:p.shift,PREVALENCE:p.prevalence}))code=code.replace(new RegExp('^DEFAULT_'+key+' = .*$', 'm'),'DEFAULT_'+key+' = '+JSON.stringify(value));
++    return code;
++  }
++  window.TestingLab={mount,unmount,getParams,pythonCode,math:{model,phi,invPhi,density}};
++})();
++
++</script>
++  <script>
++/* A continuous reading path; quiz feedback lives only in the current DOM. */
++(() => {
++  'use strict';
++  const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++  const math=s=>window.MathMarkdown?.render(s)||esc(s);
++  const paragraphs=list=>(Array.isArray(list)?list:[list]).filter(Boolean).map(p=>`<p>${math(p)}</p>`).join('');
++  const questions=[
++    {question:'Процесс в действительности работает с μ = 100 г. По выборке мы подали тревогу. Что произошло?',options:['Ошибка первого рода: ложная тревога','Ошибка второго рода: пропуск сдвига','Ошибка измерения веса доказана'],correct:0,explanation:'Состояние H₀ верно, но правило его отвергло. Ошибка относится к решению по выборке, а не обязательно к неправильному показанию весов.'},
++    {question:'У правила α = 5%. Среди каких партий определены эти 5%?',options:['Среди всех партий, для которых прозвучала тревога','Среди повторных проверок при верной H₀','Среди партий, где верна H₁'],correct:1,explanation:'α = P(тревога | H₀). Доля нормальных партий среди всех тревог — другая условная вероятность: она зависит ещё и от частоты сдвигов и мощности.'},
++    {question:'При n = 100 и α = 5% правило пропускает около 36% сдвигов до μ = 102 г. Тревоги не было. Какой вывод допустим?',options:['Процесс точно не изменился','Сдвиг 2 г невозможен','Эта выборка не пересекла порог; такой сдвиг всё ещё мог быть пропущен'],correct:2,explanation:'Неотвержение описывает решение правила. Для указанного эффекта риск пропуска велик; само это решение не доказывает отсутствие сдвига и не задаёт вероятность H₀ после данных.'}
++  ];
++  function formulaBlock(source){const pieces=Array.isArray(source)?source:String(source).split(/;|\\qquad/);return `<div class="testing-formula">${pieces.map(s=>s.trim().replace(/[,;]$/,'')).filter(Boolean).map(s=>math('$$'+s+'$$')).join('')}</div>`;}
++  function decisionTable(){return `<figure class="testing-decision"><figcaption>Два состояния процесса × два решения правила</figcaption><div class="testing-table-scroll"><table><thead><tr><th scope="col">Что верно в модели</th><th scope="col">Не подали тревогу</th><th scope="col">Подали тревогу</th></tr></thead><tbody><tr><th scope="row">H₀: μ = 100 г</th><td>Правильное неотвержение<br><strong>1 − α</strong></td><td class="testing-type-one">Ложная тревога · I род<br><strong>α</strong></td></tr><tr><th scope="row">H₁: μ = 102 г</th><td class="testing-type-two">Пропуск сдвига · II род<br><strong>β(102)</strong></td><td>Обнаружение сдвига<br><strong>1 − β(102)</strong></td></tr></tbody></table></div><p>Каждая строка — отдельный мысленный мир. Вероятности решений внутри строки складываются в 1.</p></figure>`;}
++  function quizHTML(){return `<section class="testing-check" aria-label="Проверка понимания"><span class="testing-overline">Три вопроса к самому себе</span><h2>Восстанови смысл без формул</h2>${questions.map((q,i)=>`<div class="testing-question" data-testing-question="${i}"><h3>${i+1}. ${esc(q.question)}</h3>${q.options.map((v,j)=>`<button class="testing-option" data-testing-answer="${j}" aria-pressed="false">${esc(v)}</button>`).join('')}<p class="testing-feedback" role="status" aria-live="polite"></p></div>`).join('')}<p class="testing-ephemeral">Ответы нужны для обратной связи в этой карточке и не сохраняются.</p></section>`;}
++  function historical(d){return d?`<section class="testing-chapter testing-history"><span class="testing-overline">1933 · Нейман и Эгон Пирсон</span><h2>${esc(d.title)}</h2>${paragraphs(d.paragraphs)}<a class="testing-historical-source" href="https://errorstatistics.com/wp-content/uploads/2014/08/neyman-pearson-1933_on-the-problem-of-the-most-efficient-tests-of-statistical-hypotheses.pdf#page=3" target="_blank" rel="noopener noreferrer">Первоисточник 1933 года · с. 291 и 296–302 ↗</a></section>`:'';}
++  function render({idea,storyContinuationHTML}){
++    const d=window.ATLAS_TESTING_STORY;if(!d)return '';
++    return `<article class="testing-story" aria-label="Ошибки первого и второго рода: подробный рассказ"><span class="testing-overline">${esc(d.label||'Современный учебный сценарий')}</span><p class="testing-lead">${math(d.lead)}</p><p class="testing-scenario-note">${esc(d.exampleLabel)}</p><nav class="testing-toc" aria-label="Вопросы рассказа"><button data-testing-jump="errors">Две ошибки</button><button data-testing-jump="threshold">Как выбрать порог</button><button data-testing-jump="power">Откуда берётся мощность</button><button data-testing-jump="base-rate">Знаменатель ложных тревог</button></nav>${d.chapters.map(c=>`<section class="testing-chapter" id="testing-story-${esc(c.id)}"><h2 tabindex="-1">${esc(c.title)}</h2>${paragraphs(c.paragraphs)}${c.formula?formulaBlock(c.formula):''}${c.callout?`<aside class="testing-callout">${math(c.callout)}</aside>`:''}${c.id==='errors'?decisionTable()+historical(d.historical):''}${c.id==='tradeoff'?'<section class="testing-experiment"><span class="testing-overline">Проверь последствия своего решения</span><h3>Сдвинь порог. Затем увеличь выборку.</h3><p>Параметры меняются только внутри этой учебной модели: нормальные независимые наблюдения, известное σ = 10 г, одностороннее правило.</p><div id="testingStoryLab"></div></section>':''}</section>`).join('')}<section class="testing-chapter testing-heuristic"><span class="testing-overline">Эвристика для своей работы</span><h2>${esc(d.heuristic.title)}</h2>${paragraphs(d.heuristic.rule)}<ol>${d.heuristic.steps.map(s=>`<li>${math(s)}</li>`).join('')}</ol></section>${quizHTML()}<details class="testing-reading"><summary>Первоисточник и опоры для самостоятельного чтения</summary>${d.sources.map(s=>`<article><span>${s.type}</span><h3><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a></h3><p>${esc(s.locator)}</p><p>${esc(s.guide||'')}</p></article>`).join('')}</details>${storyContinuationHTML(idea)}</article>`;
++  }
++  function analysisHTML({idea,storyContinuationHTML}){return `<article class="testing-story"><section class="testing-chapter"><h2>От двух распределений к правилу решения</h2><p>Это та же учебная линия фасовки: μ₀ = 100 г, известное σ = 10 г. При выбранном сдвиге Δ стандартизованное среднее Z имеет распределения N(0,1) и N(λ,1), где λ = Δ√n/σ.</p><div id="testingPracticeLab"></div></section><section class="testing-chapter"><h2>Почему больший Z сильнее поддерживает эту альтернативу</h2><p>У двух нормальных плотностей одинаковый масштаб. Поделим их значения при одном и том же Z: общий множитель сокращается, а разность квадратов в показателях даёт линейное выражение.</p>${formulaBlock([String.raw`f_0(z)=\varphi(z),\qquad f_1(z)=\varphi(z-\lambda)`,String.raw`\frac{f_1(z)}{f_0(z)}=\exp\!\left(\lambda z-\frac{\lambda^2}{2}\right)`])}<p>Для положительного сдвига λ > 0 это отношение растёт с Z. Поэтому выбор результатов с большим отношением правдоподобий превращается в правило Z > c. Для двух заданных распределений такое правило максимизирует мощность при ограничении на α. Оно не становится универсальным лучшим тестом против любых альтернатив.</p></section><section class="testing-chapter"><h2>Обе ошибки вычисляются у одной границы</h2>${formulaBlock([String.raw`\alpha=1-\Phi(c)`,String.raw`\beta(\mu)=\Phi\!\left(c-\frac{(\mu-100)\sqrt n}{10}\right)`,String.raw`\operatorname{Power}(\mu)=1-\beta(\mu)`,String.raw`\bar X>100+c\frac{10}{\sqrt n}`])}<p>α берётся под распределением H₀. β и мощность требуют назвать конкретное истинное среднее μ. При другом эффекте меняется распределение Z, хотя правило и его α остаются прежними.</p><p>Точность этих формул опирается на независимость, нормальность наблюдений и известное σ. Если разброс оценивается по этой же выборке, простой подстановки s вместо σ недостаточно, чтобы сохранить точное нормальное распределение статистики.</p></section>${storyContinuationHTML(idea)}</article>`;}
++  function mount(container){
++    if(!container)return;const lab=container.querySelector('#testingStoryLab, #testingPracticeLab');if(lab)window.TestingLab?.mount(lab,window.TestingLab.getParams());
++    container.addEventListener('click',e=>{
++      const jump=e.target.closest('[data-testing-jump]');if(jump){const section=container.querySelector('#testing-story-'+jump.dataset.testingJump),heading=section?.querySelector('h2');heading?.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});heading?.focus({preventScroll:true});return;}
++      const button=e.target.closest('[data-testing-answer]');if(!button)return;const group=button.closest('[data-testing-question]'),q=questions[Number(group.dataset.testingQuestion)],answer=Number(button.dataset.testingAnswer),correct=answer===q.correct;group.querySelectorAll('[data-testing-answer]').forEach(b=>{const selected=b===button;b.setAttribute('aria-pressed',selected);b.classList.toggle('is-correct',selected&&correct);b.classList.toggle('is-incorrect',selected&&!correct);});group.querySelector('.testing-feedback').innerHTML=correct?'<strong>Да.</strong> '+esc(q.explanation):'Посмотри, какое состояние процесса указано и среди каких повторений считается вероятность. Попробуй ещё раз.';
++    });
++  }
++  window.TestingStory={render,mount,quizHTML,analysisHTML};
++})();
++
++</script>
++  <script>
+@@ -3516 +3892 @@
+-  function cleanupLab(){window.GaltonLab?.unmount();window.IdeaVisuals?.unmount();window.PointsLab?.unmount();}
++  function cleanupLab(){window.TestingLab?.unmount();window.GaltonLab?.unmount();window.IdeaVisuals?.unmount();window.PointsLab?.unmount();}
+@@ -3558,4 +3934,4 @@
+-  function overviewHTML(idea){if(idea.id==='galton'&&window.GaltonStory)return window.GaltonStory.render({idea,formulaHTML,storyContinuationHTML,quizHTML});const d=digestFor(idea);return `<section class="digest-intro"><h2>${esc(d.question)}</h2><p>${esc(d.idea)}</p></section><figure class="digest-visual">${window.AtlasArt?.svg(idea.id)||''}</figure><section class="digest-example"><span class="digest-label">Один пример · современный разбор</span><p>${esc(d.example)}</p></section><section class="digest-carry"><span class="digest-label">Забрать с собой</span><p>${esc(d.carry)}</p></section><div class="digest-actions"><button class="primary-button" data-tab-switch="${['galton','pascal-fermat'].includes(idea.id)?'practice':'learn'}">${['galton','pascal-fermat'].includes(idea.id)?'Попробовать опыт':'Разобрать по шагам'} ↗</button>${histories[idea.id]?'<button class="text-button" data-tab-switch="history">Задача и поворот мысли →</button>':''}</div>${storyContinuationHTML(idea)}`;}
+-  function learnHTML(idea){return `${visualMountHTML(idea)}<section class="reasoning-list"><h3>Ход мысли</h3>${(idea.steps||[]).map((step,j)=>`<div class="proof-step"><h4><span class="step-index">${j+1}</span>${esc(step.title)}</h4><p>${esc(step.text)}</p></div>`).join('')}</section>${formulaHTML(idea)}<details class="reading-details"><summary>Ещё один пример</summary><p>${esc(idea.example)}</p></details><details class="reading-details"><summary>Условия и границы применения</summary><p>${esc(idea.limitations)}</p></details><details class="reading-details"><summary>Что нужно знать перед этим</summary>${relationsHTML(idea)}</details>`;}
+-  function practiceHTML(idea){if(idea.id==='pascal-fermat')return `${pointsRulesHTML(idea)}<div id="pointsMount"></div>${formulaHTML(idea)}${window.PointsLab.lessonHTML()}${quizHTML(idea)}${heuristicHTML(idea)}${relationsHTML(idea)}`;if(idea.id==='galton')return `<div class="reading-block"><h3>Предскажи. Затем проверь.</h3><p>Что изменится, если добавить больше шариков? А если добавить рядов? У этих параметров разные роли.</p></div><div id="galtonMount"></div>${quizHTML(idea)}${heuristicHTML(idea)}${nextHTML(idea)}`;return `${readingBlock('Сначала попробуй объяснить',idea.hook||idea.problem)}<p class="source-intro">Закрой объяснение и восстанови главную мысль. Затем выбери ответ — так легче заметить, что уже понятно, а что стоит разобрать ещё раз.</p>${quizHTML(idea)}${readingBlock('Проверь на примере',idea.example)}${heuristicHTML(idea)}${nextHTML(idea)}`;}
+-  function allSources(idea){const seen=new Set();return [...(histories[idea.id]?.sources||[]),...(idea.sources||[])].filter(s=>{const key=s.url+'|'+s.locator;if(seen.has(key))return false;seen.add(key);return true;});}
++  function overviewHTML(idea){if(idea.id==='neyman-pearson'&&window.TestingStory)return window.TestingStory.render({idea,storyContinuationHTML});if(idea.id==='galton'&&window.GaltonStory)return window.GaltonStory.render({idea,formulaHTML,storyContinuationHTML,quizHTML});const d=digestFor(idea);return `<section class="digest-intro"><h2>${esc(d.question)}</h2><p>${esc(d.idea)}</p></section><figure class="digest-visual">${window.AtlasArt?.svg(idea.id)||''}</figure><section class="digest-example"><span class="digest-label">Один пример · современный разбор</span><p>${esc(d.example)}</p></section><section class="digest-carry"><span class="digest-label">Забрать с собой</span><p>${esc(d.carry)}</p></section><div class="digest-actions"><button class="primary-button" data-tab-switch="${['galton','pascal-fermat'].includes(idea.id)?'practice':'learn'}">${['galton','pascal-fermat'].includes(idea.id)?'Попробовать опыт':'Разобрать по шагам'} ↗</button>${histories[idea.id]?'<button class="text-button" data-tab-switch="history">Задача и поворот мысли →</button>':''}</div>${storyContinuationHTML(idea)}`;}
++  function learnHTML(idea){if(idea.id==='neyman-pearson'&&window.TestingStory)return window.TestingStory.analysisHTML({idea,storyContinuationHTML});return `${visualMountHTML(idea)}<section class="reasoning-list"><h3>Ход мысли</h3>${(idea.steps||[]).map((step,j)=>`<div class="proof-step"><h4><span class="step-index">${j+1}</span>${esc(step.title)}</h4><p>${esc(step.text)}</p></div>`).join('')}</section>${formulaHTML(idea)}<details class="reading-details"><summary>Ещё один пример</summary><p>${esc(idea.example)}</p></details><details class="reading-details"><summary>Условия и границы применения</summary><p>${esc(idea.limitations)}</p></details><details class="reading-details"><summary>Что нужно знать перед этим</summary>${relationsHTML(idea)}</details>`;}
++  function practiceHTML(idea){if(idea.id==='neyman-pearson'&&window.TestingStory)return `<section class="reading-block"><h3>Выбери порог и объясни обе ошибки</h3><p>Параметры относятся к той же учебной линии фасовки. Сначала предскажи изменение α и β, затем проверь себя на графике.</p></section><div id="testingPracticeLab"></div>${window.TestingStory.quizHTML()}`;if(idea.id==='pascal-fermat')return `${pointsRulesHTML(idea)}<div id="pointsMount"></div>${formulaHTML(idea)}${window.PointsLab.lessonHTML()}${quizHTML(idea)}${heuristicHTML(idea)}${relationsHTML(idea)}`;if(idea.id==='galton')return `<div class="reading-block"><h3>Предскажи. Затем проверь.</h3><p>Что изменится, если добавить больше шариков? А если добавить рядов? У этих параметров разные роли.</p></div><div id="galtonMount"></div>${quizHTML(idea)}${heuristicHTML(idea)}${nextHTML(idea)}`;return `${readingBlock('Сначала попробуй объяснить',idea.hook||idea.problem)}<p class="source-intro">Закрой объяснение и восстанови главную мысль. Затем выбери ответ — так легче заметить, что уже понятно, а что стоит разобрать ещё раз.</p>${quizHTML(idea)}${readingBlock('Проверь на примере',idea.example)}${heuristicHTML(idea)}${nextHTML(idea)}`;}
++  function allSources(idea){const seen=new Set();return [...(idea.id==='neyman-pearson'?(window.ATLAS_TESTING_STORY?.sources||[]).map(s=>({...s,type:s.type.startsWith('Первоисточник')?'primary':'modern'})):[]),...(histories[idea.id]?.sources||[]),...(idea.sources||[])].filter(s=>{const key=s.url+'|'+s.locator;if(seen.has(key))return false;seen.add(key);return true;});}
+@@ -3570,3 +3946,3 @@
+-  function codeFor(idea){if(idea.id==='pascal-fermat'&&window.PointsLab){const p=window.PointsLab.getParams();return {filename:'points_lab.py',code:window.PointsLab.pythonCode(p),command:`python3 points_lab.py --a ${p.a} --b ${p.b} --stake ${p.stake}`,kind:'points'};}if(idea.id==='galton'&&window.GaltonLab&&scientificContext.get(idea.id)==='board'){const p=state.galtonParams||window.GaltonLab.getParams();return {filename:'galton_board.py',code:window.GaltonLab.pythonCode(p),command:`python3 galton_board.py --rows ${p.n} --balls ${p.M} --p ${p.p} --seed ${p.seed}`};}if(window.PLOT_PYTHON_SOURCE&&window.IdeaVisuals?.getParams(idea.id)){const p=window.IdeaVisuals.getParams(idea.id);let code=window.PLOT_PYTHON_SOURCE;const values={ID:p.id,VALUE:p.value,SEED:p.seed,HEADS:p.heads,TAILS:p.tails,MODE:p.mode};for(const [key,value]of Object.entries(values)){code=code.replace(new RegExp('^DEFAULT_'+key+' = .*$', 'm'),'DEFAULT_'+key+' = '+(value===null?'None':JSON.stringify(value)));}return {filename:'idea_experiment.py',code,command:'python3 idea_experiment.py --out experiment',kind:'graph'};}if(idea.python?.code)return {...idea.python,command:`python3 ${idea.python.filename}`};if(window.PYTHON_EXAMPLES?.code&&window.PYTHON_EXAMPLES.ids.includes(idea.id))return {filename:'learn.py',code:window.PYTHON_EXAMPLES.code,command:`python3 learn.py --idea ${idea.id} --seed 42`};return null;}
+-  function codeHTML(idea){const code=codeFor(idea);if(!code)return `<div class="reading-block"><h3>Сначала — смысл</h3><p>Для этой карточки главное — постановка задачи и цепочка рассуждений. Вычислительный опыт можно найти в связанных идеях.</p></div>${relationsHTML(idea)}`;return `<div class="reading-block"><h3>Повтори самостоятельно</h3><p>Полный пример для Python 3. Внешние библиотеки не нужны. Сохрани файл и запусти его командой ниже.</p></div><code class="code-command">${esc(code.command)}</code><div class="code-actions"><button class="secondary-button" id="copyCode">Скопировать код</button><button class="primary-button" id="downloadCode">Скачать .py ↓</button></div><p class="code-description">${code.kind==='points'?'Те же счёт и однократный взнос, что в карточке. Программа перечисляет продолжения до конца матча и считает точные вероятности через Fraction. Случайный генератор не нужен.':code.kind==='graph'?'Скачиваемый файл содержит параметры выбранного графика. Он повторяет числовую модель и сохраняет CSV, JSON и SVG. Оформление SVG упрощено; расчёты соответствуют карточке.':idea.id==='galton'?'Тот же генератор и порядок случайных шагов, что в лаборатории. Seed и параметры определяют результат. Скрипт сохраняет таблицу CSV и график SVG.':'Посмотри на расчёт, затем измени условия. Некоторые примеры используют современные учебные методы — это указано в комментариях к коду.'}</p><pre class="code-block"><code>${esc(code.code)}</code></pre>`;}
+-  function renderIdea(){const idea=byId.get(state.selected);if(!idea)return;cleanupLab();const tabs=[['overview',idea.id==='galton'?'Рассказ':'Идея'],...(histories[idea.id]?[['history','История']]:[]),['learn','Разбор'],['practice','Опыт'],['sources','Источники'],['code','Python']];$('#panelContent').innerHTML=`${panelTools()}<header class="reader-heading"><div class="idea-meta"><span class="date">${esc(idea.yearLabel||idea.year||(idea.kind==='application'?'Сегодня':'Основа'))}</span><span>·</span><span>${esc(groupNames[idea.group]||'Идея')}</span></div><h1 class="idea-title">${esc(idea.shortTitle||idea.title)}</h1><p class="reader-authors">${compactAuthors(idea)}</p></header><div class="idea-tabs" role="tablist" aria-label="Разделы карточки">${tabs.map(([id,label])=>`<button role="tab" data-tab-switch="${id}" class="${state.tab===id?'active':''}" aria-selected="${state.tab===id}" aria-controls="ideaBody" id="tab-${id}">${label}</button>`).join('')}</div><div id="ideaBody" role="tabpanel" aria-labelledby="tab-${state.tab}">${state.tab==='overview'?overviewHTML(idea):state.tab==='history'?historyHTML(idea):state.tab==='learn'?learnHTML(idea):state.tab==='practice'?practiceHTML(idea):state.tab==='sources'?sourcesHTML(idea):codeHTML(idea)}</div>`;if(idea.id==='galton'&&['overview','practice'].includes(state.tab)){const mount=state.tab==='overview'?$('#galtonStoryLab'):$('#galtonMount');if(mount){scientificContext.set(idea.id,'board');window.GaltonLab?.mount(mount,state.galtonParams||(state.tab==='overview'?{n:4,M:100,p:0.5,seed:42}:undefined));}}if(idea.id==='pascal-fermat'&&['learn','practice'].includes(state.tab))window.PointsLab?.mount($('#pointsMount'));else if(state.tab==='learn'){scientificContext.set(idea.id,'graph');window.IdeaVisuals?.mount($('#ideaVisual'),idea.id);}}
++  function codeFor(idea){if(idea.id==='neyman-pearson'&&window.TestingLab){const p=window.TestingLab.getParams();return {filename:'testing_lab.py',code:window.TestingLab.pythonCode(p),command:`python3 testing_lab.py --c ${p.c} --n ${p.n} --shift ${p.shift} --prevalence ${p.prevalence}`,kind:'testing'};}if(idea.id==='pascal-fermat'&&window.PointsLab){const p=window.PointsLab.getParams();return {filename:'points_lab.py',code:window.PointsLab.pythonCode(p),command:`python3 points_lab.py --a ${p.a} --b ${p.b} --stake ${p.stake}`,kind:'points'};}if(idea.id==='galton'&&window.GaltonLab&&scientificContext.get(idea.id)==='board'){const p=state.galtonParams||window.GaltonLab.getParams();return {filename:'galton_board.py',code:window.GaltonLab.pythonCode(p),command:`python3 galton_board.py --rows ${p.n} --balls ${p.M} --p ${p.p} --seed ${p.seed}`};}if(window.PLOT_PYTHON_SOURCE&&window.IdeaVisuals?.getParams(idea.id)){const p=window.IdeaVisuals.getParams(idea.id);let code=window.PLOT_PYTHON_SOURCE;const values={ID:p.id,VALUE:p.value,SEED:p.seed,HEADS:p.heads,TAILS:p.tails,MODE:p.mode};for(const [key,value]of Object.entries(values)){code=code.replace(new RegExp('^DEFAULT_'+key+' = .*$', 'm'),'DEFAULT_'+key+' = '+(value===null?'None':JSON.stringify(value)));}return {filename:'idea_experiment.py',code,command:'python3 idea_experiment.py --out experiment',kind:'graph'};}if(idea.python?.code)return {...idea.python,command:`python3 ${idea.python.filename}`};if(window.PYTHON_EXAMPLES?.code&&window.PYTHON_EXAMPLES.ids.includes(idea.id))return {filename:'learn.py',code:window.PYTHON_EXAMPLES.code,command:`python3 learn.py --idea ${idea.id} --seed 42`};return null;}
++  function codeHTML(idea){const code=codeFor(idea);if(!code)return `<div class="reading-block"><h3>Сначала — смысл</h3><p>Для этой карточки главное — постановка задачи и цепочка рассуждений. Вычислительный опыт можно найти в связанных идеях.</p></div>${relationsHTML(idea)}`;return `<div class="reading-block"><h3>Повтори самостоятельно</h3><p>Полный пример для Python 3. Внешние библиотеки не нужны. Сохрани файл и запусти его командой ниже.</p></div><code class="code-command">${esc(code.command)}</code><div class="code-actions"><button class="secondary-button" id="copyCode">Скопировать код</button><button class="primary-button" id="downloadCode">Скачать .py ↓</button></div><p class="code-description">${code.kind==='testing'?'Те же порог, объём выборки, сдвиг и частота сдвигов, что в лаборатории. Python повторяет α, β, мощность и ожидаемую таблицу решений; сохраняет JSON, CSV и SVG.':code.kind==='points'?'Те же счёт и однократный взнос, что в карточке. Программа перечисляет продолжения до конца матча и считает точные вероятности через Fraction. Случайный генератор не нужен.':code.kind==='graph'?'Скачиваемый файл содержит параметры выбранного графика. Он повторяет числовую модель и сохраняет CSV, JSON и SVG. Оформление SVG упрощено; расчёты соответствуют карточке.':idea.id==='galton'?'Тот же генератор и порядок случайных шагов, что в лаборатории. Seed и параметры определяют результат. Скрипт сохраняет таблицу CSV и график SVG.':'Посмотри на расчёт, затем измени условия. Некоторые примеры используют современные учебные методы — это указано в комментариях к коду.'}</p><pre class="code-block"><code>${esc(code.code)}</code></pre>`;}
++  function renderIdea(){const idea=byId.get(state.selected);if(!idea)return;cleanupLab();const tabs=[['overview',['galton','neyman-pearson'].includes(idea.id)?'Рассказ':'Идея'],...(histories[idea.id]?[['history','История']]:[]),['learn','Разбор'],['practice','Опыт'],['sources','Источники'],['code','Python']];$('#panelContent').innerHTML=`${panelTools()}<header class="reader-heading"><div class="idea-meta"><span class="date">${esc(idea.yearLabel||idea.year||(idea.kind==='application'?'Сегодня':'Основа'))}</span><span>·</span><span>${esc(groupNames[idea.group]||'Идея')}</span></div><h1 class="idea-title">${esc(idea.shortTitle||idea.title)}</h1><p class="reader-authors">${compactAuthors(idea)}</p></header><div class="idea-tabs" role="tablist" aria-label="Разделы карточки">${tabs.map(([id,label])=>`<button role="tab" data-tab-switch="${id}" class="${state.tab===id?'active':''}" aria-selected="${state.tab===id}" aria-controls="ideaBody" id="tab-${id}">${label}</button>`).join('')}</div><div id="ideaBody" role="tabpanel" aria-labelledby="tab-${state.tab}">${state.tab==='overview'?overviewHTML(idea):state.tab==='history'?historyHTML(idea):state.tab==='learn'?learnHTML(idea):state.tab==='practice'?practiceHTML(idea):state.tab==='sources'?sourcesHTML(idea):codeHTML(idea)}</div>`;if(idea.id==='neyman-pearson'&&['overview','learn','practice'].includes(state.tab))window.TestingStory?.mount($('#ideaBody'));if(idea.id==='galton'&&['overview','practice'].includes(state.tab)){const mount=state.tab==='overview'?$('#galtonStoryLab'):$('#galtonMount');if(mount){scientificContext.set(idea.id,'board');window.GaltonLab?.mount(mount,state.galtonParams||(state.tab==='overview'?{n:4,M:100,p:0.5,seed:42}:undefined));}}if(idea.id==='pascal-fermat'&&['learn','practice'].includes(state.tab))window.PointsLab?.mount($('#pointsMount'));else if(state.tab==='learn'&&idea.id!=='neyman-pearson'){scientificContext.set(idea.id,'graph');window.IdeaVisuals?.mount($('#ideaVisual'),idea.id);}}
