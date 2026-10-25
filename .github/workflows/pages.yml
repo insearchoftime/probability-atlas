@@ -10,6 +10,12 @@ on:
       - updates/galton-reader.patch
       - updates/huygens-axis.patch
       - updates/testing-story.patch
+      - updates/statistics-editorial.patch
+      - atlas-editorial.js
+      - atlas-statistics.js
+      - atlas-statistics.css
+      - scripts/build.py
+      - tests/**
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -37,17 +43,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Prepare verified atlas
         run: |
-          mkdir -p _site
-          git show 189a315dd1d2d85ea6175807e3fbe4ecd1b1b22c:index.html > _site/index.html
-          cat updates/archive-*.b64 | base64 --decode | gzip --decompress > /tmp/atlas.patch
-          patch --batch --forward _site/index.html < /tmp/atlas.patch
-          patch --batch --forward _site/index.html < updates/compact-spreads.patch
-          patch --batch --forward _site/index.html < updates/storytelling.patch
-          patch --batch --forward _site/index.html < updates/galton-reader.patch
-          patch --batch --forward _site/index.html < updates/huygens-axis.patch
-          patch --batch --forward _site/index.html < updates/testing-story.patch
-          echo "f2cc92f2bbe989dde49bbfec73b81f57ecc9273a55ef834bc5d06c1959e096aa  _site/index.html" | sha256sum --check --strict
-          cp .nojekyll NOTICE.txt _site/
+          python3 scripts/build.py
+          node tests/check-atlas.mjs
+          node tests/atlas-statistics.test.cjs
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
